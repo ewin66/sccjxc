@@ -107,7 +107,8 @@ namespace TAddWinform {
                 goods.GoodCategoryId = Convert.ToInt32(lueCategory.EditValue);
             }
 
-            SelectGoodsesEvent(goods);this.Close();
+            SelectGoodsesEvent(goods);
+            this.Close();
         }
 
         /// <summary>

@@ -110,17 +110,35 @@
     <Compile Include="DataAccessUtil.cs" />
     <Compile Include="DbHelperSQL.cs" />
     <Compile Include="ErrorHandler.cs" />
+    <Compile Include="FormAddAndUpdateCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddAndUpdateCompany.Designer.cs">
+      <DependentUpon>FormAddAndUpdateCompany.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddFromAndCategory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAddFromAndCategory.Designer.cs">
       <DependentUpon>FormAddFromAndCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAddGoods.cs">
+    <Compile Include="FormAddAndUpdateGoods.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddGoods.Designer.cs">
-      <DependentUpon>FormAddGoods.cs</DependentUpon>
+    <Compile Include="FormAddAndUpdateGoods.Designer.cs">
+      <DependentUpon>FormAddAndUpdateGoods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCompany.Designer.cs">
+      <DependentUpon>FormCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCompanyWhere.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCompanyWhere.Designer.cs">
+      <DependentUpon>FormCompanyWhere.cs</DependentUpon>
     </Compile>
     <Compile Include="FormGoods.cs">
       <SubType>Form</SubType>
@@ -193,14 +211,25 @@
     <Compile Include="GoodsCategory.cs" />
     <Compile Include="GoodsFrom.cs" />
     <Compile Include="LogHelper.cs" />
+    <Compile Include="Model\Company.cs" />
+    <Compile Include="Model\CompanyType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WriteLog.cs" />
+    <EmbeddedResource Include="FormAddAndUpdateCompany.resx">
+      <DependentUpon>FormAddAndUpdateCompany.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddFromAndCategory.resx">
       <DependentUpon>FormAddFromAndCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAddGoods.resx">
-      <DependentUpon>FormAddGoods.cs</DependentUpon>
+    <EmbeddedResource Include="FormAddAndUpdateGoods.resx">
+      <DependentUpon>FormAddAndUpdateGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCompany.resx">
+      <DependentUpon>FormCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCompanyWhere.resx">
+      <DependentUpon>FormCompanyWhere.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGoods.resx">
       <DependentUpon>FormGoods.cs</DependentUpon>
@@ -294,9 +323,7 @@
     <Content Include="lib\NPOI.dll" />
     <Content Include="Monitor.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

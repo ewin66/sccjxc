@@ -1,5 +1,5 @@
 ﻿namespace TAddWinform {
-    partial class FormAddGoods {
+    partial class FormAddAndUpdateGoods {
         /// <summary>
         /// Required designer variable.
         /// </summary>

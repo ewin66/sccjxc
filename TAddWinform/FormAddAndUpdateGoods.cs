@@ -10,8 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
 namespace TAddWinform {
-    public partial class FormAddGoods : DevExpress.XtraEditors.XtraForm {
-        public FormAddGoods() {
+    public partial class FormAddAndUpdateGoods : FormMdiBase {
+        public FormAddAndUpdateGoods() {
             InitializeComponent();
         }
 
@@ -29,6 +29,32 @@ namespace TAddWinform {
             //创建表单的时候加载产地和品种的下拉选择框的数据
             LoadLueFromData();
             LoadLueCategoryData();
+            //跳过来的tag是否有值,有值是修改,无值是添加
+            if (Tag!=null&&Convert.ToInt32(Tag)>0)
+            {
+                btnAdd.Text = "修改";
+                FillData(Convert.ToInt32(Tag));
+            }
+            else
+            {
+                btnCancel_Click(null, null);
+                btnAdd.Text = "添加";
+            }
+        }
+
+        private void FillData(int id)
+        {
+            string sql = "select * from "+Program.DataBaseName+"..MD_Goods" +
+                         " where id=@id and Actived=1";
+            List<SqlParameter> list = new List<SqlParameter>()
+            {
+                new SqlParameter("@id",id)
+            };
+            DataRow row = DataAccessUtil.ExecuteDataTable(sql,list).Rows[0];
+            txtCode.Text = row["GoodsCode"].ToString();
+            txtName.Text = row["GoodsName"].ToString();
+            lueGoodsFrom.EditValue = row["GoodsFromId"];
+            lueGoodsCategory.EditValue = row["GoodsCategoryId"];
         }
 
         /// <summary>
@@ -40,10 +66,43 @@ namespace TAddWinform {
             try {
                 //添加时检查控件是否有值
                 CheckViewDatas();
-                //进行商品的添加
-                AddGoods();
+                if (btnAdd.Text.Equals("添加"))
+                {
+                    //进行商品的添加
+                    AddGoods();
+                }
+                else
+                {
+                    //进行商品的修改
+                    UpdateGoods();
+                }
+                
             } catch (Exception exception) {
                 ErrorHandler.OnError(exception);
+            }
+        }
+
+        private void UpdateGoods()
+        {
+            string sql = "update "+Program.DataBaseName+"..MD_Goods set" +
+                         " GoodsCode=@code,GoodsName=@name,GoodsFromId=@fid,GoodsCategoryId=@cid" +
+                         " where id=@id and Actived=1";
+            List<SqlParameter> list = new List<SqlParameter>()
+            {
+                new SqlParameter("@code",txtCode.Text.Trim()),
+                new SqlParameter("@name",txtName.Text.Trim()),
+                new SqlParameter("@fid",lueGoodsFrom.EditValue),
+                new SqlParameter("@cid",lueGoodsCategory.EditValue),
+                new SqlParameter("@id",Convert.ToInt32(Tag))
+            };
+            if (DataAccessUtil.ExecuteNonQuery(sql,list)>0)
+            {
+                SelectAllGoodsesEvent();
+                this.Close();//修改成功关闭窗口
+            }
+            else
+            {
+                throw new ApplicationException("修改失败");
             }
         }
 

@@ -170,8 +170,7 @@ namespace TAddWinform
                         ShowMdiForm(typeof(FormUser));
                         break;
                 }
-            }
-            else
+            }else
             {
                 switch (strDisplayName)
                 {
@@ -183,6 +182,9 @@ namespace TAddWinform
                         break;
                     case "商品操作":
                         ShowMdiForm(typeof(FormGoods));
+                        break;
+                    case "关联单位操作":
+                        ShowMdiForm(typeof(FormCompany));
                         break;
                 }
             }

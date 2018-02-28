@@ -1,0 +1,106 @@
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\Project.exe
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\Project.pdb
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\obj\Debug\Project.FormLog.resources
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\obj\Debug\Project.FormLogin.resources
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\obj\Debug\Project.FormMain.resources
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\obj\Debug\Project.FormMdiBase.resources
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\obj\Debug\Project.Properties.Resources.resources
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\obj\Debug\Project.exe.licenses
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\obj\Debug\Project.exe
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\obj\Debug\Project.pdb
+E:\project\T1\Project\Project\obj\Debug\ResolveAssemblyReference.cache
+E:\project\T1\Project\Project\obj\Debug\Project.FormConfig.resources
+E:\project\T1\Project\Project\obj\Debug\Project.FormEg.resources
+E:\project\T1\Project\Project\obj\Debug\Project.FormLog.resources
+E:\project\T1\Project\Project\obj\Debug\Project.FormLogin.resources
+E:\project\T1\Project\Project\obj\Debug\Project.FormMain.resources
+E:\project\T1\Project\Project\obj\Debug\Project.FormMdiBase.resources
+E:\project\T1\Project\Project\obj\Debug\Project.FormPersonReport.resources
+E:\project\T1\Project\Project\obj\Debug\Project.FormPOMain.resources
+E:\project\T1\Project\Project\obj\Debug\Project.FormTest.resources
+E:\project\T1\Project\Project\obj\Debug\Project.FormVendorReport.resources
+E:\project\T1\Project\Project\obj\Debug\Project.Properties.Resources.resources
+E:\project\T1\Project\Project\obj\Debug\Project.csproj.GenerateResource.Cache
+E:\project\T1\Project\Project\obj\Debug\Project.exe.licenses
+E:\project\T1\Project\Project\bin\Debug\Project.exe
+E:\project\T1\Project\Project\bin\Debug\Project.pdb
+E:\project\T1\Project\Project\bin\Debug\DevExpress.Data.v10.1.dll
+E:\project\T1\Project\Project\bin\Debug\DevExpress.Utils.v10.1.dll
+E:\project\T1\Project\Project\bin\Debug\DevExpress.XtraBars.v10.1.dll
+E:\project\T1\Project\Project\bin\Debug\DevExpress.XtraEditors.v10.1.dll
+E:\project\T1\Project\Project\bin\Debug\DevExpress.XtraGrid.v10.1.dll
+E:\project\T1\Project\Project\bin\Debug\DevExpress.XtraLayout.v10.1.dll
+E:\project\T1\Project\Project\bin\Debug\DevExpress.XtraNavBar.v10.1.dll
+E:\project\T1\Project\Project\bin\Debug\DevExpress.XtraTreeList.v10.1.dll
+E:\project\T1\Project\Project\bin\Debug\DevExpress.XtraLayout.v10.1.xml
+E:\project\T1\Project\Project\bin\Debug\DevExpress.XtraEditors.v10.1.xml
+E:\project\T1\Project\Project\bin\Debug\DevExpress.XtraNavBar.v10.1.xml
+E:\project\T1\Project\Project\bin\Debug\DevExpress.XtraTreeList.v10.1.xml
+E:\project\T1\Project\Project\bin\Debug\DevExpress.Utils.v10.1.xml
+E:\project\T1\Project\Project\bin\Debug\DevExpress.XtraGrid.v10.1.xml
+E:\project\T1\Project\Project\bin\Debug\DevExpress.XtraBars.v10.1.xml
+E:\project\T1\Project\Project\bin\Debug\DevExpress.Data.v10.1.xml
+E:\project\T1\Project\Project\obj\Debug\Project.exe
+E:\project\T1\Project\Project\obj\Debug\Project.pdb
+F:\T1\Project\Project\obj\Debug\Project.exe
+F:\T1\Project\Project\obj\Debug\Project.pdb
+F:\T1\Project\Project\bin\Debug\Project.exe
+F:\T1\Project\Project\bin\Debug\Project.pdb
+F:\T1\Project\Project\bin\Debug\DevExpress.Data.v11.1.dll
+F:\T1\Project\Project\bin\Debug\DevExpress.Printing.v11.1.Core.dll
+F:\T1\Project\Project\bin\Debug\DevExpress.Utils.v11.1.dll
+F:\T1\Project\Project\bin\Debug\DevExpress.XtraBars.v11.1.dll
+F:\T1\Project\Project\bin\Debug\DevExpress.XtraEditors.v11.1.dll
+F:\T1\Project\Project\bin\Debug\DevExpress.XtraGrid.v11.1.dll
+F:\T1\Project\Project\bin\Debug\DevExpress.XtraLayout.v11.1.dll
+F:\T1\Project\Project\bin\Debug\DevExpress.XtraNavBar.v11.1.dll
+F:\T1\Project\Project\bin\Debug\DevExpress.XtraTreeList.v11.1.dll
+F:\T1\Project\Project\bin\Debug\DevExpress.Data.v11.1.xml
+F:\T1\Project\Project\bin\Debug\DevExpress.Utils.v11.1.xml
+F:\T1\Project\Project\bin\Debug\DevExpress.XtraBars.v11.1.xml
+F:\T1\Project\Project\bin\Debug\DevExpress.XtraEditors.v11.1.xml
+F:\T1\Project\Project\bin\Debug\DevExpress.XtraGrid.v11.1.xml
+F:\T1\Project\Project\bin\Debug\DevExpress.XtraLayout.v11.1.xml
+F:\T1\Project\Project\bin\Debug\DevExpress.XtraNavBar.v11.1.xml
+F:\T1\Project\Project\bin\Debug\DevExpress.XtraTreeList.v11.1.xml
+F:\T1\Project\Project\obj\Debug\ResolveAssemblyReference.cache
+F:\T1\Project\Project\obj\Debug\Project.FormConfig.resources
+F:\T1\Project\Project\obj\Debug\Project.FormEg.resources
+F:\T1\Project\Project\obj\Debug\Project.FormLog.resources
+F:\T1\Project\Project\obj\Debug\Project.FormLogin.resources
+F:\T1\Project\Project\obj\Debug\Project.FormMain.resources
+F:\T1\Project\Project\obj\Debug\Project.FormMdiBase.resources
+F:\T1\Project\Project\obj\Debug\Project.FormPersonReport.resources
+F:\T1\Project\Project\obj\Debug\Project.FormPOMain.resources
+F:\T1\Project\Project\obj\Debug\Project.FormTest.resources
+F:\T1\Project\Project\obj\Debug\Project.FormVendorReport.resources
+F:\T1\Project\Project\obj\Debug\Project.Properties.Resources.resources
+F:\T1\Project\Project\obj\Debug\ResGen.read.1.tlog
+F:\T1\Project\Project\obj\Debug\ResGen.write.1.tlog
+F:\T1\Project\Project\obj\Debug\Project.exe.licenses
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\DevExpress.Data.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\DevExpress.Printing.v11.1.Core.dll
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\DevExpress.Utils.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\DevExpress.XtraBars.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\DevExpress.XtraEditors.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\DevExpress.XtraGrid.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\DevExpress.XtraLayout.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\DevExpress.XtraNavBar.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\DevExpress.XtraTreeList.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\DevExpress.Data.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\DevExpress.Utils.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\DevExpress.XtraBars.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\DevExpress.XtraEditors.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\DevExpress.XtraGrid.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\DevExpress.XtraLayout.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\DevExpress.XtraNavBar.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\bin\Debug\DevExpress.XtraTreeList.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\obj\Debug\Project.FormMethod.resources
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\obj\Debug\Project.FormOrder.resources
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\obj\Debug\GenerateResource-ResGen.read.6.tlog
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\obj\Debug\Project.FormMethodEidt.resources
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\obj\Debug\Project.FormOrderEdit.resources
+C:\Documents and Settings\Administrator\桌面\T1\Project\Project\obj\Debug\Project.FormPwd.resources

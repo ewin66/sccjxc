@@ -1,0 +1,226 @@
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\obj\Debug\TAddWinform.FormLog.resources
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\obj\Debug\TAddWinform.FormLogin.resources
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\obj\Debug\TAddWinform.FormMain.resources
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\obj\Debug\TAddWinform.FormMdiBase.resources
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\obj\Debug\TAddWinform.FormMethod.resources
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\obj\Debug\TAddWinform.FormMethodEidt.resources
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\obj\Debug\TAddWinform.FormOrder.resources
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\obj\Debug\TAddWinform.FormPwd.resources
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\DevExpress.Data.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\DevExpress.Printing.v11.1.Core.dll
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\DevExpress.Utils.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\DevExpress.XtraBars.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\DevExpress.XtraEditors.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\DevExpress.XtraGrid.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\DevExpress.XtraLayout.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\DevExpress.XtraNavBar.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\DevExpress.XtraTreeList.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\DevExpress.Data.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\DevExpress.Utils.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\DevExpress.XtraBars.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\DevExpress.XtraEditors.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\DevExpress.XtraGrid.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\DevExpress.XtraLayout.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\DevExpress.XtraNavBar.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\DevExpress.XtraTreeList.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\TAddWinform.exe.config
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\obj\Debug\TAddWinform.FormLanguage.resources
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\obj\Debug\TAddWinform.Properties.Resources.resources
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\obj\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\obj\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\obj\Debug\TAddWinform.exe.licenses
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\TAddWinform.exe
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\bin\Debug\TAddWinform.pdb
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\obj\Debug\TAddWinform.exe
+C:\Documents and Settings\Administrator\桌面\UFIDA.Cust.YLProduct\UFIDA.Cust.YLProduct\TAddWinform\obj\Debug\TAddWinform.pdb
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\TAddWinform.exe.config
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\obj\Debug\TAddWinform.exe
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\obj\Debug\TAddWinform.pdb
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\TAddWinform.exe
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\TAddWinform.pdb
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\DevExpress.Data.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\DevExpress.Printing.v11.1.Core.dll
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\DevExpress.Utils.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraBars.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraEditors.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraGrid.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraLayout.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraNavBar.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraTreeList.v11.1.dll
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\DevExpress.Data.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\DevExpress.Utils.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraBars.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraEditors.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraGrid.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraLayout.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraNavBar.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraTreeList.v11.1.xml
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormLanguage.resources
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormLog.resources
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormLogin.resources
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormMain.resources
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormMdiBase.resources
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormOrder.resources
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormPwd.resources
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\obj\Debug\TAddWinform.Properties.Resources.resources
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\obj\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\obj\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormUser.resources
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormUserEidt.resources
+C:\Documents and Settings\Administrator\桌面\TAddWinform\TAddWinform\bin\Debug\NPOI.dll
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\TAddWinform.exe.config
+G:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.exe
+G:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.pdb
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\TAddWinform.exe
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\TAddWinform.pdb
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.Data.v11.1.dll
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.Printing.v11.1.Core.dll
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.Utils.v11.1.dll
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraBars.v11.1.dll
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraEditors.v11.1.dll
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraGrid.v11.1.dll
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraLayout.v11.1.dll
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraNavBar.v11.1.dll
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraTreeList.v11.1.dll
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\NPOI.dll
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.Data.v11.1.xml
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.Utils.v11.1.xml
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraBars.v11.1.xml
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraEditors.v11.1.xml
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraGrid.v11.1.xml
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraLayout.v11.1.xml
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraNavBar.v11.1.xml
+G:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraTreeList.v11.1.xml
+G:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.csprojResolveAssemblyReference.cache
+G:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormLanguage.resources
+G:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormLog.resources
+G:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormLogin.resources
+G:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormMain.resources
+G:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormMdiBase.resources
+G:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormUser.resources
+G:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormUserEidt.resources
+G:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormOrder.resources
+G:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormPwd.resources
+G:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.Properties.Resources.resources
+G:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.csproj.GenerateResource.Cache
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\TAddWinform.exe.config
+E:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.exe
+E:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.pdb
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\TAddWinform.exe
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.Data.v11.1.dll
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.Printing.v11.1.Core.dll
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.Utils.v11.1.dll
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraBars.v11.1.dll
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraEditors.v11.1.dll
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraGrid.v11.1.dll
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraLayout.v11.1.dll
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraNavBar.v11.1.dll
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraTreeList.v11.1.dll
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\NPOI.dll
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.Data.v11.1.xml
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.Utils.v11.1.xml
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraBars.v11.1.xml
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraEditors.v11.1.xml
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraGrid.v11.1.xml
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraLayout.v11.1.xml
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraNavBar.v11.1.xml
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraTreeList.v11.1.xml
+E:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.csprojResolveAssemblyReference.cache
+E:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormLanguage.resources
+E:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormLog.resources
+E:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormLogin.resources
+E:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormMain.resources
+E:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormMdiBase.resources
+E:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormUser.resources
+E:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormUserEidt.resources
+E:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormOrder.resources
+E:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormPwd.resources
+E:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.Properties.Resources.resources
+E:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.csproj.GenerateResource.Cache
+E:\newproject\TAddWinform\TAddWinform\bin\Debug\TAddWinform.pdb
+E:\newproject\TAddWinform\TAddWinform\obj\Debug\TAddWinform.exe.licenses
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\TAddWinform.exe.config
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\TAddWinform.exe
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\TAddWinform.pdb
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.Data.v15.2.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.Printing.v15.2.Core.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.Utils.v15.2.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraBars.v15.2.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraEditors.v15.2.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraGrid.v15.2.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraLayout.v15.2.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraNavBar.v15.2.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraPrinting.v15.2.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraTreeList.v15.2.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\NPOI.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.Printing.v15.2.Core.xml
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.Data.v15.2.xml
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.Utils.v15.2.xml
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraBars.v15.2.xml
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraEditors.v15.2.xml
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraPrinting.v15.2.xml
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraGrid.v15.2.xml
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraLayout.v15.2.xml
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraNavBar.v15.2.xml
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\DevExpress.XtraTreeList.v15.2.xml
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\de\DevExpress.Printing.v15.2.Core.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\es\DevExpress.Printing.v15.2.Core.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ja\DevExpress.Printing.v15.2.Core.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ru\DevExpress.Printing.v15.2.Core.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\de\DevExpress.Data.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\es\DevExpress.Data.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ja\DevExpress.Data.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ru\DevExpress.Data.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\de\DevExpress.Utils.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\es\DevExpress.Utils.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ja\DevExpress.Utils.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ru\DevExpress.Utils.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\de\DevExpress.XtraBars.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\es\DevExpress.XtraBars.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ja\DevExpress.XtraBars.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ru\DevExpress.XtraBars.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\de\DevExpress.XtraEditors.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\es\DevExpress.XtraEditors.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ja\DevExpress.XtraEditors.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ru\DevExpress.XtraEditors.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\de\DevExpress.XtraPrinting.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\es\DevExpress.XtraPrinting.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ja\DevExpress.XtraPrinting.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ru\DevExpress.XtraPrinting.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\de\DevExpress.XtraGrid.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\es\DevExpress.XtraGrid.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ja\DevExpress.XtraGrid.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ru\DevExpress.XtraGrid.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\de\DevExpress.XtraLayout.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\es\DevExpress.XtraLayout.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ja\DevExpress.XtraLayout.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ru\DevExpress.XtraLayout.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\de\DevExpress.XtraNavBar.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\es\DevExpress.XtraNavBar.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ja\DevExpress.XtraNavBar.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ru\DevExpress.XtraNavBar.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\de\DevExpress.XtraTreeList.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\es\DevExpress.XtraTreeList.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ja\DevExpress.XtraTreeList.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\bin\Debug\ru\DevExpress.XtraTreeList.v15.2.resources.dll
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.csprojResolveAssemblyReference.cache
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormLanguage.resources
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormLog.resources
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormLogin.resources
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormMain.resources
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormMdiBase.resources
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormUser.resources
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormUserEidt.resources
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormOrder.resources
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormPwd.resources
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.Properties.Resources.resources
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.csproj.GenerateResource.Cache
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.exe.licenses
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.exe
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.pdb
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormGoods.resources
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormAddFromAndCategory.resources
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormGoodsWhere.resources
+D:\C#Test\TAddWinform\TAddWinform\obj\Debug\TAddWinform.FormAddGoods.resources

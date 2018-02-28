@@ -1,0 +1,128 @@
+﻿<XtraSerializer version="1.0" application="View">
+  <property name="#LayoutVersion" />
+  <property name="ActiveFilterEnabled">true</property>
+  <property name="Columns" iskey="true" value="19">
+    <property name="Item1" isnull="true" iskey="true">
+      <property name="Name">gridColumn1</property>
+    </property>
+    <property name="Item2" isnull="true" iskey="true">
+      <property name="Width">104</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">0</property>
+      <property name="Name">gridColumn2</property>
+    </property>
+    <property name="Item3" isnull="true" iskey="true">
+      <property name="Width">121</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">1</property>
+      <property name="Name">gridColumn3</property>
+    </property>
+    <property name="Item4" isnull="true" iskey="true">
+      <property name="Width">107</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">2</property>
+      <property name="Name">gridColumn4</property>
+    </property>
+    <property name="Item5" isnull="true" iskey="true">
+      <property name="Width">154</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">3</property>
+      <property name="Name">gridColumn5</property>
+    </property>
+    <property name="Item6" isnull="true" iskey="true">
+      <property name="Width">174</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">4</property>
+      <property name="Name">gridColumn6</property>
+    </property>
+    <property name="Item7" isnull="true" iskey="true">
+      <property name="Width">126</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">5</property>
+      <property name="Name">gridColumn7</property>
+    </property>
+    <property name="Item8" isnull="true" iskey="true">
+      <property name="Width">112</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">6</property>
+      <property name="Name">gridColumn8</property>
+    </property>
+    <property name="Item9" isnull="true" iskey="true">
+      <property name="Width">109</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">7</property>
+      <property name="Name">gridColumn9</property>
+    </property>
+    <property name="Item10" isnull="true" iskey="true">
+      <property name="Width">151</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">8</property>
+      <property name="Name">gridColumn10</property>
+    </property>
+    <property name="Item11" isnull="true" iskey="true">
+      <property name="Width">123</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">9</property>
+      <property name="Name">gridColumn11</property>
+    </property>
+    <property name="Item12" isnull="true" iskey="true">
+      <property name="Width">132</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">10</property>
+      <property name="Name">gridColumn12</property>
+    </property>
+    <property name="Item13" isnull="true" iskey="true">
+      <property name="Width">102</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">11</property>
+      <property name="Name">gridColumn13</property>
+      <property name="Summary" iskey="true" value="1">
+        <property name="Item1" isnull="true" iskey="true">
+          <property name="DisplayFormat" />
+          <property name="SummaryType">Sum</property>
+          <property name="Tag" isnull="true" />
+          <property name="FieldName">qty</property>
+        </property>
+      </property>
+    </property>
+    <property name="Item14" isnull="true" iskey="true">
+      <property name="Width">109</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">12</property>
+      <property name="Name">gridColumn17</property>
+    </property>
+    <property name="Item15" isnull="true" iskey="true">
+      <property name="Width">94</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">13</property>
+      <property name="Name">gridColumn18</property>
+    </property>
+    <property name="Item16" isnull="true" iskey="true">
+      <property name="Width">89</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">14</property>
+      <property name="Name">gridColumn19</property>
+    </property>
+    <property name="Item17" isnull="true" iskey="true">
+      <property name="Width">124</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">15</property>
+      <property name="Name">gridColumn16</property>
+    </property>
+    <property name="Item18" isnull="true" iskey="true">
+      <property name="Width">100</property>
+      <property name="Name">gridColumn15</property>
+    </property>
+    <property name="Item19" isnull="true" iskey="true">
+      <property name="Width">92</property>
+      <property name="Name">gridColumn14</property>
+    </property>
+  </property>
+  <property name="OptionsView" isnull="true" iskey="true">
+    <property name="ShowFooter">true</property>
+    <property name="ShowGroupPanel">false</property>
+    <property name="ColumnAutoWidth">false</property>
+  </property>
+  <property name="ActiveFilterString" />
+  <property name="GroupSummarySortInfoState" />
+</XtraSerializer>

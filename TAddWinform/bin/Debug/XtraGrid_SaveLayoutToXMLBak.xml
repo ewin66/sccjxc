@@ -1,0 +1,302 @@
+﻿<XtraSerializer version="1.0" application="View">
+  <property name="#LayoutVersion" />
+  <property name="ScrollStyle">LiveVertScroll, LiveHorzScroll</property>
+  <property name="BestFitMaxRowCount">-1</property>
+  <property name="HorzScrollStep">3</property>
+  <property name="FocusRectStyle">CellFocus</property>
+  <property name="PreviewLineCount">-1</property>
+  <property name="NewItemRowText" />
+  <property name="GroupPanelText" />
+  <property name="PreviewFieldName" />
+  <property name="PreviewIndent">-1</property>
+  <property name="LevelIndent">-1</property>
+  <property name="GroupFooterShowMode">VisibleIfExpanded</property>
+  <property name="ActiveFilterEnabled">true</property>
+  <property name="SynchronizeClones">true</property>
+  <property name="BorderStyle">Default</property>
+  <property name="ViewCaption" />
+  <property name="DetailHeight">350</property>
+  <property name="Name">gridView1</property>
+  <property name="DetailTabHeaderLocation">Top</property>
+  <property name="OptionsFilter" isnull="true" iskey="true">
+    <property name="AllowFilterEditor">false</property>
+  </property>
+  <property name="Columns" iskey="true" value="19">
+    <property name="Item1" isnull="true" iskey="true">
+      <property name="Name">gridColumn1</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">id</property>
+      <property name="ColumnEditName" />
+      <property name="FieldName">id</property>
+    </property>
+    <property name="Item2" isnull="true" iskey="true">
+      <property name="Width">104</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">0</property>
+      <property name="Name">gridColumn2</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">仓库编码</property>
+      <property name="ColumnEditName" />
+      <property name="FieldName">wareCode</property>
+    </property>
+    <property name="Item3" isnull="true" iskey="true">
+      <property name="Width">121</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">1</property>
+      <property name="Name">gridColumn3</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">仓库名称</property>
+      <property name="ColumnEditName" />
+      <property name="FieldName">wareName</property>
+    </property>
+    <property name="Item4" isnull="true" iskey="true">
+      <property name="Width">107</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">2</property>
+      <property name="Name">gridColumn4</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">存货编码</property>
+      <property name="ColumnEditName" />
+      <property name="FieldName">invCode</property>
+    </property>
+    <property name="Item5" isnull="true" iskey="true">
+      <property name="Width">154</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">3</property>
+      <property name="Name">gridColumn5</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">存货名称</property>
+      <property name="ColumnEditName" />
+      <property name="FieldName">invName</property>
+    </property>
+    <property name="Item6" isnull="true" iskey="true">
+      <property name="Width">174</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">4</property>
+      <property name="Name">gridColumn6</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">规格型号</property>
+      <property name="ColumnEditName" />
+      <property name="FieldName">specification</property>
+    </property>
+    <property name="Item7" isnull="true" iskey="true">
+      <property name="Width">126</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">5</property>
+      <property name="Name">gridColumn7</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">英文名称</property>
+      <property name="ColumnEditName" />
+      <property name="FieldName">ItemName</property>
+    </property>
+    <property name="Item8" isnull="true" iskey="true">
+      <property name="Width">112</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">6</property>
+      <property name="Name">gridColumn8</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">材质</property>
+      <property name="ColumnEditName" />
+      <property name="FieldName">Materials</property>
+    </property>
+    <property name="Item9" isnull="true" iskey="true">
+      <property name="Width">109</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">7</property>
+      <property name="Name">gridColumn9</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">颜色</property>
+      <property name="ColumnEditName" />
+      <property name="FieldName">Color</property>
+    </property>
+    <property name="Item10" isnull="true" iskey="true">
+      <property name="Width">151</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">8</property>
+      <property name="Name">gridColumn10</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">尺寸</property>
+      <property name="ColumnEditName" />
+      <property name="FieldName">Dimension</property>
+    </property>
+    <property name="Item11" isnull="true" iskey="true">
+      <property name="Width">123</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">9</property>
+      <property name="Name">gridColumn11</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">原产地</property>
+      <property name="ColumnEditName" />
+      <property name="FieldName">COO</property>
+    </property>
+    <property name="Item12" isnull="true" iskey="true">
+      <property name="Width">132</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">10</property>
+      <property name="Name">gridColumn12</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">计量单位</property>
+      <property name="ColumnEditName" />
+      <property name="FieldName">unitName</property>
+    </property>
+    <property name="Item13" isnull="true" iskey="true">
+      <property name="Width">102</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">11</property>
+      <property name="Name">gridColumn13</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">现存量</property>
+      <property name="ColumnEditName" />
+      <property name="FieldName">qty</property>
+      <property name="Summary" iskey="true" value="1">
+        <property name="Item1" isnull="true" iskey="true">
+          <property name="DisplayFormat" />
+          <property name="SummaryType">Sum</property>
+          <property name="Tag" isnull="true" />
+          <property name="FieldName">qty</property>
+        </property>
+      </property>
+    </property>
+    <property name="Item14" isnull="true" iskey="true">
+      <property name="Width">109</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">12</property>
+      <property name="Name">gridColumn17</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">预计入库量</property>
+      <property name="ColumnEditName" />
+      <property name="FieldName">r</property>
+    </property>
+    <property name="Item15" isnull="true" iskey="true">
+      <property name="Width">94</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">13</property>
+      <property name="Name">gridColumn18</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">预计出库量</property>
+      <property name="ColumnEditName" />
+      <property name="FieldName">c</property>
+    </property>
+    <property name="Item16" isnull="true" iskey="true">
+      <property name="Width">89</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">14</property>
+      <property name="Name">gridColumn19</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">可用量</property>
+      <property name="ColumnEditName" />
+      <property name="FieldName">k</property>
+    </property>
+    <property name="Item17" isnull="true" iskey="true">
+      <property name="Width">124</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">15</property>
+      <property name="Name">gridColumn16</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">图片</property>
+      <property name="ColumnEditName">repositoryItemPictureEdit2</property>
+      <property name="FieldName">FileContent</property>
+    </property>
+    <property name="Item18" isnull="true" iskey="true">
+      <property name="Width">100</property>
+      <property name="Name">gridColumn15</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">最新成本</property>
+      <property name="ColumnEditName" />
+      <property name="FieldName">invSCost</property>
+    </property>
+    <property name="Item19" isnull="true" iskey="true">
+      <property name="Width">92</property>
+      <property name="Name">gridColumn14</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="ReadOnly">true</property>
+      </property>
+      <property name="Caption">零售价</property>
+      <property name="ColumnEditName" />
+      <property name="FieldName">retailPrice</property>
+    </property>
+  </property>
+  <property name="ShowButtonMode">ShowForFocusedCell</property>
+  <property name="ViewCaptionHeight">-1</property>
+  <property name="VertScrollTipFieldName" />
+  <property name="OptionsView" isnull="true" iskey="true">
+    <property name="ShowFooter">true</property>
+    <property name="ShowGroupPanel">false</property>
+    <property name="ColumnAutoWidth">false</property>
+  </property>
+  <property name="RowSeparatorHeight">0</property>
+  <property name="FixedLineWidth">2</property>
+  <property name="IndicatorWidth">40</property>
+  <property name="Appearance" isnull="true" iskey="true">
+    <property name="FocusedRow" iskey="true" value="FocusedRow">
+      <property name="Font">Tahoma, 12pt</property>
+      <property name="BackColor">128, 255, 255</property>
+      <property name="Options" isnull="true" iskey="true">
+        <property name="UseBackColor">true</property>
+        <property name="UseFont">true</property>
+      </property>
+    </property>
+    <property name="Row" iskey="true" value="Row">
+      <property name="Options" isnull="true" iskey="true">
+        <property name="UseFont">true</property>
+      </property>
+    </property>
+    <property name="SelectedRow" iskey="true" value="SelectedRow">
+      <property name="Options" isnull="true" iskey="true">
+        <property name="UseFont">true</property>
+      </property>
+    </property>
+  </property>
+  <property name="ColumnPanelRowHeight">-1</property>
+  <property name="GroupRowHeight">-1</property>
+  <property name="RowHeight">0</property>
+  <property name="GroupFormat">{0}: [#image]{1} {2}</property>
+  <property name="FooterPanelHeight">-1</property>
+  <property name="OptionsCustomization" isnull="true" iskey="true">
+    <property name="AllowGroup">false</property>
+    <property name="AllowQuickHideColumns">false</property>
+  </property>
+  <property name="ChildGridLevelName" />
+  <property name="VertScrollVisibility">Auto</property>
+  <property name="HorzScrollVisibility">Auto</property>
+  <property name="FormatConditions" iskey="true" value="0" />
+  <property name="GroupSummary" iskey="true" value="0" />
+  <property name="ActiveFilterString" />
+  <property name="GroupSummarySortInfoState" />
+</XtraSerializer>

@@ -186,6 +186,9 @@ namespace TAddWinform
                     case "关联单位操作":
                         ShowMdiForm(typeof(FormCompany));
                         break;
+                    case "采购入库":
+                        ShowMdiForm(typeof(FormPurchase));
+                        break;
                 }
             }
 

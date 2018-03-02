@@ -93,6 +93,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\NPOI.dll</HintPath>
     </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.0.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Administrator\Desktop\资源\HaiNpoi\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.0.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Administrator\Desktop\资源\HaiNpoi\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -182,6 +190,12 @@
     <Compile Include="FormMdiBase.designer.cs">
       <DependentUpon>FormMdiBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPurchase.Designer.cs">
+      <DependentUpon>FormPurchase.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMdiBase.resx">
       <DependentUpon>FormMdiBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPurchase.resx">
+      <DependentUpon>FormPurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUser.resx">
       <DependentUpon>FormUser.cs</DependentUpon>

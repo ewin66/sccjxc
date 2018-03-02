@@ -44,7 +44,8 @@ namespace TAddWinform {
         private void barLargeButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
             FormCompanyWhere formCompanyWhere = new FormCompanyWhere();
             formCompanyWhere.SelectCompanyEvent+=formCompanyWhere_SelectCompanyEvent;
-            formCompanyWhere.Show();
+            formCompanyWhere.StartPosition = FormStartPosition.CenterParent;
+            formCompanyWhere.ShowDialog();
         }
 
         /// <summary>
@@ -55,7 +56,8 @@ namespace TAddWinform {
         private void barLargeButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
             FormAddAndUpdateCompany formAddAndUpdateCompany = new FormAddAndUpdateCompany();
             formAddAndUpdateCompany.addCompanyEvent+=formAddAndUpdateCompany_addCompanyEvent;
-            formAddAndUpdateCompany.Show();
+            formAddAndUpdateCompany.StartPosition = FormStartPosition.CenterParent;
+            formAddAndUpdateCompany.ShowDialog();
         }
 
         /// <summary> 修改往来单位
@@ -81,8 +83,7 @@ namespace TAddWinform {
             List<SqlParameter> list = new List<SqlParameter>();
             if (DataAccessUtil.ExecuteNonQuery(sql, list) > 0) {
                 LoadAllCompany();
-            }
-            //gv.DeleteRow(gv.FocusedRowHandle);
+            }//gv.DeleteRow(gv.FocusedRowHandle);
         }
 
         private void LoadAllCompany()
@@ -181,7 +182,8 @@ namespace TAddWinform {
                     int id = Convert.ToInt32(gv.GetRowCellValue(selectRow, gv.Columns["Id"])); //根据下标选择列值
                     formAddAndUpdate.Tag = id;
                     formAddAndUpdate.addCompanyEvent += formAddAndUpdateCompany_addCompanyEvent;
-                    formAddAndUpdate.Show();
+                    formAddAndUpdate.StartPosition = FormStartPosition.CenterParent;
+                    formAddAndUpdate.ShowDialog();
                 }
             } catch (Exception exception) {
                 MessageBox.Show(exception.Message);

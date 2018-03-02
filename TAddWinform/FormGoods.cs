@@ -71,7 +71,8 @@ namespace TAddWinform {
         private void barLargeButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
             FormAddFromAndCategory form = new FormAddFromAndCategory();
             form.StartPosition = FormStartPosition.CenterParent;
-            form.Show();
+            form.StartPosition = FormStartPosition.CenterParent;
+            form.ShowDialog();
         }
         /// <summary>
         /// 条件查询
@@ -81,7 +82,8 @@ namespace TAddWinform {
         private void barLargeButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
             FormGoodsWhere formGoodsWhere = new FormGoodsWhere();
             formGoodsWhere.SelectGoodsesEvent+=formGoodsWhere_SelectGoodsesEvent;
-            formGoodsWhere.Show();
+            formGoodsWhere.StartPosition = FormStartPosition.CenterParent;
+            formGoodsWhere.ShowDialog();
         }
         /// <summary>
         /// 根据条件查询商品信息列表
@@ -138,7 +140,8 @@ namespace TAddWinform {
         private void barLargeButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
             FormAddAndUpdateGoods formAddGoods = new FormAddAndUpdateGoods();
             formAddGoods.SelectAllGoodsesEvent+=formAddGoods_SelectAllGoodsesEvent;
-            formAddGoods.Show();
+            formAddGoods.StartPosition = FormStartPosition.CenterParent;
+            formAddGoods.ShowDialog();
         }
 
 
@@ -168,7 +171,8 @@ namespace TAddWinform {
                     int id = Convert.ToInt32(gridView1.GetRowCellValue(selectRow, gridView1.Columns["Id"])); //根据下标选择列值
                     formGoodsUpdate.Tag = id;
                     formGoodsUpdate.SelectAllGoodsesEvent += formAddGoods_SelectAllGoodsesEvent;
-                    formGoodsUpdate.Show();
+                    formGoodsUpdate.StartPosition = FormStartPosition.CenterParent;
+                    formGoodsUpdate.ShowDialog();
                 }
             }
             catch (Exception exception)

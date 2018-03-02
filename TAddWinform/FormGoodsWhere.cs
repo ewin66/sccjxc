@@ -12,8 +12,7 @@ namespace TAddWinform {
     public partial class FormGoodsWhere : FormMdiBase {
         public FormGoodsWhere() {
             InitializeComponent();
-        }
-        /**
+        }/**
          * 声明事件和委托
          */
         public delegate void SelectGoodses(Goods goods);

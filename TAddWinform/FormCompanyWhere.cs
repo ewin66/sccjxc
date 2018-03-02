@@ -10,7 +10,7 @@ using DevExpress.XtraEditors;
 using TAddWinform.Model;
 
 namespace TAddWinform {
-    public partial class FormCompanyWhere : DevExpress.XtraEditors.XtraForm {
+    public partial class FormCompanyWhere : FormMdiBase {
         public FormCompanyWhere() {
             InitializeComponent();
         }
@@ -71,7 +71,11 @@ namespace TAddWinform {
                 company.CompanyName1 = txtName.Text.Trim();
             }
 
-            if (lueType.EditValue != null || lueType.EditValue.ToString() != "请选择")
+            if (lueType.EditValue == null || lueType.EditValue.ToString() == "请选择")
+            {
+                company.CompanyType = 3;
+            }
+            else
             {
                 company.CompanyType = Convert.ToInt32(lueType.EditValue);
             }

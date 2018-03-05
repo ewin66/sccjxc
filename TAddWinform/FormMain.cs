@@ -189,6 +189,9 @@ namespace TAddWinform
                     case "采购入库":
                         ShowMdiForm(typeof(FormPurchase));
                         break;
+                    case "仓库管理":
+                        ShowMdiForm(typeof(FormStorehouse));
+                        break;
                 }
             }
 
@@ -203,6 +206,9 @@ namespace TAddWinform
         {
             FormPwd frm = new FormPwd();
             frm.ShowDialog();
+        }
+
+        private void trvWorkShop_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e) {
         }
 
     }

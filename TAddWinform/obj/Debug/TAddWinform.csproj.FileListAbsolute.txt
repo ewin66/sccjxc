@@ -311,3 +311,8 @@ D:\C#Test\TAddWinform\sccjxc\TAddWinform\obj\Debug\TAddWinform.FormCompanyWhere.
 D:\C#Test\TAddWinform\sccjxc\TAddWinform\obj\Debug\TAddWinform.FormAddAndUpdateCompany.resources
 D:\C#Test\TAddWinform\sccjxc\TAddWinform\bin\Debug\NPOI.OpenXml4Net.dll
 D:\C#Test\TAddWinform\sccjxc\TAddWinform\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\C#Test\TAddWinform\sccjxc\TAddWinform\obj\Debug\TAddWinform.csprojResolveAssemblyReference.cache
+D:\C#Test\TAddWinform\sccjxc\TAddWinform\obj\Debug\TAddWinform.FormPurchase.resources
+D:\C#Test\TAddWinform\sccjxc\TAddWinform\obj\Debug\TAddWinform.FormStorehouse.resources
+D:\C#Test\TAddWinform\sccjxc\TAddWinform\obj\Debug\TAddWinform.FormStorehouseWhere.resources
+D:\C#Test\TAddWinform\sccjxc\TAddWinform\obj\Debug\TAddWinform.FormAddAndUpdateStorehouse.resources

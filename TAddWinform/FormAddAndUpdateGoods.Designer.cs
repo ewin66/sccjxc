@@ -134,7 +134,7 @@
             this.lueGoodsCategory.Size = new System.Drawing.Size(100, 20);
             this.lueGoodsCategory.TabIndex = 4;
             // 
-            // FormAddGoods
+            // FormAddAndUpdateGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -149,7 +149,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txtCode);
             this.Controls.Add(this.labelControl1);
-            this.Name = "FormAddGoods";
+            this.Name = "FormAddAndUpdateGoods";
             this.Text = "商品的添加";
             this.Load += new System.EventHandler(this.FormAddGoods_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();

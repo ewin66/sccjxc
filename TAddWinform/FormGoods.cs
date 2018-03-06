@@ -69,8 +69,10 @@ namespace TAddWinform {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void barLargeButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
-            FormAddFromAndCategory form = new FormAddFromAndCategory();
-            form.StartPosition = FormStartPosition.CenterParent;
+            FormAddFromAndCategory form = new FormAddFromAndCategory
+            {
+                StartPosition = FormStartPosition.CenterParent
+            };
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog();
         }
@@ -80,7 +82,7 @@ namespace TAddWinform {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void barLargeButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
-            FormGoodsWhere formGoodsWhere = new FormGoodsWhere();
+            var formGoodsWhere = new FormGoodsWhere();
             formGoodsWhere.SelectGoodsesEvent+=formGoodsWhere_SelectGoodsesEvent;
             formGoodsWhere.StartPosition = FormStartPosition.CenterParent;
             formGoodsWhere.ShowDialog();
@@ -164,7 +166,7 @@ namespace TAddWinform {
 
             try
             {
-                if (info.InRowCell)
+                if (_info.InRowCell)
                 {
                     FormAddAndUpdateGoods formGoodsUpdate = new FormAddAndUpdateGoods();
                     int selectRow = gridView1.GetSelectedRows()[0];  //获得选中的第一行的下标
@@ -181,7 +183,7 @@ namespace TAddWinform {
             }
         }
 
-        private GridHitInfo info = null;
+        private GridHitInfo _info = null;
         /// <summary>
         /// GridView中的鼠标按下事件
         /// </summary>
@@ -189,7 +191,7 @@ namespace TAddWinform {
         /// <param name="e"></param>
         private void gridView1_MouseDown(object sender, MouseEventArgs e)
         {
-            info = gridView1.CalcHitInfo(e.Y, e.Y);
+            _info = gridView1.CalcHitInfo(e.Y, e.Y);
         }
 
         /// <summary>

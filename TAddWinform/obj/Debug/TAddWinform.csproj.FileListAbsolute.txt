@@ -316,3 +316,4 @@ D:\C#Test\TAddWinform\sccjxc\TAddWinform\obj\Debug\TAddWinform.FormPurchase.reso
 D:\C#Test\TAddWinform\sccjxc\TAddWinform\obj\Debug\TAddWinform.FormStorehouse.resources
 D:\C#Test\TAddWinform\sccjxc\TAddWinform\obj\Debug\TAddWinform.FormStorehouseWhere.resources
 D:\C#Test\TAddWinform\sccjxc\TAddWinform\obj\Debug\TAddWinform.FormAddAndUpdateStorehouse.resources
+D:\C#Test\TAddWinform\sccjxc\TAddWinform\obj\Debug\TAddWinform.FormStock.resources

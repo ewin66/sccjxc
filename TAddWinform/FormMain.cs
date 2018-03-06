@@ -192,6 +192,9 @@ namespace TAddWinform
                     case "仓库管理":
                         ShowMdiForm(typeof(FormStorehouse));
                         break;
+                    case "现存量":
+                        ShowMdiForm(typeof(FormStock));
+                        break;
                 }
             }
 
@@ -209,6 +212,10 @@ namespace TAddWinform
         }
 
         private void trvWorkShop_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e) {
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+
         }
 
     }

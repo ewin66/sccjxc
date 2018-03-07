@@ -251,6 +251,7 @@
     <Compile Include="LogHelper.cs" />
     <Compile Include="Model\Company.cs" />
     <Compile Include="Model\CompanyType.cs" />
+    <Compile Include="Model\StorageBill.cs" />
     <Compile Include="Model\Storehouse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

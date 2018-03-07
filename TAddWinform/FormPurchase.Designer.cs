@@ -64,6 +64,8 @@
             this.UnitPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Count = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Total = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -85,6 +87,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lueGoodsName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueGoodsFromName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueGoodsCategoryName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -386,7 +390,9 @@
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.lueGoodsName,
             this.lueGoodsFromName,
-            this.lueGoodsCategoryName});
+            this.lueGoodsCategoryName,
+            this.repositoryItemTextEdit1,
+            this.repositoryItemGridLookUpEdit1});
             this.gridControl1.Size = new System.Drawing.Size(741, 266);
             this.gridControl1.TabIndex = 12;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -407,6 +413,8 @@
             this.gridView1.OptionsNavigation.EnterMoveNextColumn = true;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
+            this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
             // 
             // GoodsCode
             // 
@@ -435,6 +443,7 @@
             // 
             // lueGoodsName
             // 
+            this.lueGoodsName.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip;
             this.lueGoodsName.AutoHeight = false;
             this.lueGoodsName.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -531,6 +540,19 @@
             this.Total.Visible = true;
             this.Total.VisibleIndex = 6;
             // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
+            // repositoryItemGridLookUpEdit1
+            // 
+            this.repositoryItemGridLookUpEdit1.AutoHeight = false;
+            this.repositoryItemGridLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemGridLookUpEdit1.Name = "repositoryItemGridLookUpEdit1";
+            this.repositoryItemGridLookUpEdit1.NullText = "请选择";
+            // 
             // FormPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -566,6 +588,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lueGoodsName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueGoodsFromName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueGoodsCategoryName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -613,6 +637,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraBars.BarButtonItem btnAddRow;
         private DevExpress.XtraBars.BarButtonItem btnDeleteRow;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit1;
 
 
     }

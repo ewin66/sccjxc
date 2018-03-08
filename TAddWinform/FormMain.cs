@@ -195,6 +195,15 @@ namespace TAddWinform
                     case "现存量":
                         ShowMdiForm(typeof(FormStock));
                         break;
+                    case "入库明细":
+                        ShowMdiForm(typeof(FormStorageDetail));
+                        break;
+                    case "出库明细":
+                        ShowMdiForm(typeof(FormOutLibDetail));
+                        break;
+                    case "销售出库":
+                        ShowMdiForm(typeof(FormOutLib));
+                        break;
                 }
             }
 

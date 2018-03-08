@@ -196,6 +196,18 @@
     <Compile Include="FormMdiBase.designer.cs">
       <DependentUpon>FormMdiBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOutLib.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutLib.Designer.cs">
+      <DependentUpon>FormOutLib.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutLibDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutLibDetail.Designer.cs">
+      <DependentUpon>FormOutLibDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPurchase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +219,12 @@
     </Compile>
     <Compile Include="FormStock.Designer.cs">
       <DependentUpon>FormStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStorageDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStorageDetail.Designer.cs">
+      <DependentUpon>FormStorageDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="FormStorehouse.cs">
       <SubType>Form</SubType>
@@ -252,6 +270,7 @@
     <Compile Include="Model\Company.cs" />
     <Compile Include="Model\CompanyType.cs" />
     <Compile Include="Model\StorageBill.cs" />
+    <Compile Include="Model\StorageDetail.cs" />
     <Compile Include="Model\Storehouse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -296,11 +315,17 @@
     <EmbeddedResource Include="FormMdiBase.resx">
       <DependentUpon>FormMdiBase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOutLib.resx">
+      <DependentUpon>FormOutLib.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPurchase.resx">
       <DependentUpon>FormPurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStock.resx">
       <DependentUpon>FormStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStorageDetail.resx">
+      <DependentUpon>FormStorageDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStorehouse.resx">
       <DependentUpon>FormStorehouse.cs</DependentUpon>

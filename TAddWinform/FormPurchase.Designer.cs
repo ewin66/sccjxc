@@ -30,7 +30,6 @@
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnSave = new DevExpress.XtraBars.BarButtonItem();
             this.btnReset = new DevExpress.XtraBars.BarButtonItem();
-            this.btnAddRow = new DevExpress.XtraBars.BarButtonItem();
             this.btnDeleteRow = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -38,20 +37,21 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddRow = new DevExpress.XtraBars.BarButtonItem();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.lueCompany = new DevExpress.XtraEditors.LookUpEdit();
+            this.deTime = new DevExpress.XtraEditors.DateEdit();
             this.lueStorehouse = new DevExpress.XtraEditors.LookUpEdit();
             this.txtMaker = new DevExpress.XtraEditors.TextEdit();
             this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
-            this.txtCompany = new DevExpress.XtraEditors.TextEdit();
             this.txtPurOddNumber = new DevExpress.XtraEditors.TextEdit();
-            this.txtPurdate = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.GoodsCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -69,19 +69,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCompany.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deTime.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueStorehouse.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaker.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPurOddNumber.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPurdate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueGoodsName)).BeginInit();
@@ -139,7 +140,6 @@
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSave),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnReset),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddRow),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDeleteRow)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
@@ -158,13 +158,6 @@
             this.btnReset.Id = 2;
             this.btnReset.Name = "btnReset";
             this.btnReset.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReset_ItemClick);
-            // 
-            // btnAddRow
-            // 
-            this.btnAddRow.Caption = "添加行";
-            this.btnAddRow.Id = 4;
-            this.btnAddRow.Name = "btnAddRow";
-            this.btnAddRow.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddRow_ItemClick);
             // 
             // btnDeleteRow
             // 
@@ -220,14 +213,20 @@
             this.barButtonItem1.ImageUri.Uri = "Apply";
             this.barButtonItem1.Name = "barButtonItem1";
             // 
+            // btnAddRow
+            // 
+            this.btnAddRow.Caption = "添加行";
+            this.btnAddRow.Id = 4;
+            this.btnAddRow.Name = "btnAddRow";
+            // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.lueCompany);
+            this.layoutControl1.Controls.Add(this.deTime);
             this.layoutControl1.Controls.Add(this.lueStorehouse);
             this.layoutControl1.Controls.Add(this.txtMaker);
             this.layoutControl1.Controls.Add(this.textEdit5);
-            this.layoutControl1.Controls.Add(this.txtCompany);
             this.layoutControl1.Controls.Add(this.txtPurOddNumber);
-            this.layoutControl1.Controls.Add(this.txtPurdate);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.layoutControl1.Location = new System.Drawing.Point(0, 55);
             this.layoutControl1.Name = "layoutControl1";
@@ -237,9 +236,46 @@
             this.layoutControl1.TabIndex = 11;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // lueCompany
+            // 
+            this.lueCompany.Location = new System.Drawing.Point(89, 51);
+            this.lueCompany.MenuManager = this.barManager1;
+            this.lueCompany.Name = "lueCompany";
+            this.lueCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueCompany.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyName1", "CompanyName1")});
+            this.lueCompany.Properties.NullText = "请选择";
+            this.lueCompany.Properties.ShowFooter = false;
+            this.lueCompany.Properties.ShowHeader = false;
+            this.lueCompany.Size = new System.Drawing.Size(152, 20);
+            this.lueCompany.StyleController = this.layoutControl1;
+            this.lueCompany.TabIndex = 12;
+            // 
+            // deTime
+            // 
+            this.deTime.EditValue = null;
+            this.deTime.Location = new System.Drawing.Point(327, 17);
+            this.deTime.MenuManager = this.barManager1;
+            this.deTime.Name = "deTime";
+            this.deTime.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deTime.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deTime.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
+            this.deTime.Properties.DisplayFormat.FormatString = "yyyy/MM/dd HH:mm:ss";
+            this.deTime.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.deTime.Properties.EditFormat.FormatString = "yyyy/MM/dd HH:mm:ss";
+            this.deTime.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.deTime.Properties.Mask.EditMask = "yyyy/MM/dd HH:mm:ss";
+            this.deTime.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
+            this.deTime.Size = new System.Drawing.Size(190, 20);
+            this.deTime.StyleController = this.layoutControl1;
+            this.deTime.TabIndex = 11;
+            // 
             // lueStorehouse
             // 
-            this.lueStorehouse.Location = new System.Drawing.Point(551, 51);
+            this.lueStorehouse.Location = new System.Drawing.Point(603, 51);
             this.lueStorehouse.MenuManager = this.barManager1;
             this.lueStorehouse.Name = "lueStorehouse";
             this.lueStorehouse.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -249,113 +285,72 @@
             this.lueStorehouse.Properties.NullText = "请选择";
             this.lueStorehouse.Properties.ShowFooter = false;
             this.lueStorehouse.Properties.ShowHeader = false;
-            this.lueStorehouse.Size = new System.Drawing.Size(173, 20);
+            this.lueStorehouse.Size = new System.Drawing.Size(121, 20);
             this.lueStorehouse.StyleController = this.layoutControl1;
             this.lueStorehouse.TabIndex = 10;
             // 
             // txtMaker
             // 
-            this.txtMaker.Location = new System.Drawing.Point(551, 17);
+            this.txtMaker.Location = new System.Drawing.Point(603, 17);
             this.txtMaker.MenuManager = this.barManager1;
             this.txtMaker.Name = "txtMaker";
-            this.txtMaker.Size = new System.Drawing.Size(173, 20);
+            this.txtMaker.Size = new System.Drawing.Size(121, 20);
             this.txtMaker.StyleController = this.layoutControl1;
             this.txtMaker.TabIndex = 9;
             // 
             // textEdit5
             // 
             this.textEdit5.EditValue = "入库单";
-            this.textEdit5.Location = new System.Drawing.Point(330, 51);
+            this.textEdit5.Location = new System.Drawing.Point(327, 51);
             this.textEdit5.MenuManager = this.barManager1;
             this.textEdit5.Name = "textEdit5";
             this.textEdit5.Properties.ReadOnly = true;
-            this.textEdit5.Size = new System.Drawing.Size(135, 20);
+            this.textEdit5.Size = new System.Drawing.Size(190, 20);
             this.textEdit5.StyleController = this.layoutControl1;
             this.textEdit5.TabIndex = 8;
-            // 
-            // txtCompany
-            // 
-            this.txtCompany.Location = new System.Drawing.Point(89, 51);
-            this.txtCompany.MenuManager = this.barManager1;
-            this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(155, 20);
-            this.txtCompany.StyleController = this.layoutControl1;
-            this.txtCompany.TabIndex = 7;
             // 
             // txtPurOddNumber
             // 
             this.txtPurOddNumber.Location = new System.Drawing.Point(89, 17);
             this.txtPurOddNumber.MenuManager = this.barManager1;
             this.txtPurOddNumber.Name = "txtPurOddNumber";
-            this.txtPurOddNumber.Size = new System.Drawing.Size(155, 20);
+            this.txtPurOddNumber.Size = new System.Drawing.Size(152, 20);
             this.txtPurOddNumber.StyleController = this.layoutControl1;
             this.txtPurOddNumber.TabIndex = 5;
-            // 
-            // txtPurdate
-            // 
-            this.txtPurdate.Location = new System.Drawing.Point(330, 17);
-            this.txtPurdate.MenuManager = this.barManager1;
-            this.txtPurdate.Name = "txtPurdate";
-            this.txtPurdate.Size = new System.Drawing.Size(135, 20);
-            this.txtPurdate.StyleController = this.layoutControl1;
-            this.txtPurdate.TabIndex = 4;
             // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6,
-            this.layoutControlItem3});
+            this.layoutControlItem3,
+            this.layoutControlItem1,
+            this.layoutControlItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 20;
             this.layoutControlGroup1.Size = new System.Drawing.Size(741, 93);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.txtPurdate;
-            this.layoutControlItem1.Location = new System.Drawing.Point(241, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(221, 34);
-            this.layoutControlItem1.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem1.Text = "入库日期:";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(52, 14);
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtPurOddNumber;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(241, 34);
+            this.layoutControlItem2.Size = new System.Drawing.Size(238, 34);
             this.layoutControlItem2.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlItem2.Text = "入库单号:";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(52, 14);
             // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.txtCompany;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 34);
-            this.layoutControlItem4.MaxSize = new System.Drawing.Size(0, 34);
-            this.layoutControlItem4.MinSize = new System.Drawing.Size(136, 34);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(241, 39);
-            this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem4.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem4.Text = "供货单位:";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(52, 14);
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.textEdit5;
-            this.layoutControlItem5.Location = new System.Drawing.Point(241, 34);
+            this.layoutControlItem5.Location = new System.Drawing.Point(238, 34);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(221, 39);
+            this.layoutControlItem5.Size = new System.Drawing.Size(276, 39);
             this.layoutControlItem5.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlItem5.Text = "单据类型:";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(52, 14);
@@ -363,9 +358,9 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.txtMaker;
-            this.layoutControlItem6.Location = new System.Drawing.Point(462, 0);
+            this.layoutControlItem6.Location = new System.Drawing.Point(514, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(259, 34);
+            this.layoutControlItem6.Size = new System.Drawing.Size(207, 34);
             this.layoutControlItem6.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlItem6.Text = "制单人:";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(52, 14);
@@ -373,12 +368,32 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.lueStorehouse;
-            this.layoutControlItem3.Location = new System.Drawing.Point(462, 34);
+            this.layoutControlItem3.Location = new System.Drawing.Point(514, 34);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(259, 39);
+            this.layoutControlItem3.Size = new System.Drawing.Size(207, 39);
             this.layoutControlItem3.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlItem3.Text = "仓库: ";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(52, 14);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.deTime;
+            this.layoutControlItem1.Location = new System.Drawing.Point(238, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(276, 34);
+            this.layoutControlItem1.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.layoutControlItem1.Text = "制表日期:";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(52, 14);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.lueCompany;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 34);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(238, 39);
+            this.layoutControlItem4.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.layoutControlItem4.Text = "供货单位:";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(52, 14);
             // 
             // gridControl1
             // 
@@ -414,7 +429,6 @@
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
-            this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
             // 
             // GoodsCode
             // 
@@ -570,19 +584,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lueCompany.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deTime.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueStorehouse.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaker.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPurOddNumber.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPurdate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueGoodsName)).EndInit();
@@ -613,13 +628,9 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.TextEdit txtMaker;
         private DevExpress.XtraEditors.TextEdit textEdit5;
-        private DevExpress.XtraEditors.TextEdit txtCompany;
         private DevExpress.XtraEditors.TextEdit txtPurOddNumber;
-        private DevExpress.XtraEditors.TextEdit txtPurdate;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
@@ -639,6 +650,10 @@
         private DevExpress.XtraBars.BarButtonItem btnDeleteRow;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit1;
+        private DevExpress.XtraEditors.DateEdit deTime;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraEditors.LookUpEdit lueCompany;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
 
 
     }

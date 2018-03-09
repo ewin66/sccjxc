@@ -318,6 +318,9 @@
     <EmbeddedResource Include="FormOutLib.resx">
       <DependentUpon>FormOutLib.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOutLibDetail.resx">
+      <DependentUpon>FormOutLibDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPurchase.resx">
       <DependentUpon>FormPurchase.cs</DependentUpon>
     </EmbeddedResource>

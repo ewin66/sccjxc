@@ -23,57 +23,35 @@ namespace TAddWinform
 
         private void FormStock_Load(object sender, EventArgs e)
         {
-            InitLueStorehouseData();
-            InitLueGoodsNameData();
+            LoadStockDataList(); //库存表单列表
         }
 
-        private void InitLueGoodsNameData()
+        private void LoadStockDataList()
         {
-            string sql = "select * from " + Program.DataBaseName + "..MD_Goods where Actived=1";
-            List<SqlParameter> list = new List<SqlParameter>();
-            List<Goods> goodses = new List<Goods>();
-            DataTable table = DataAccessUtil.ExecuteDataTable(sql, list);
+            string sql = "select g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,bi.Count,b.BillType_ID from MD_BillItem as bi inner join MD_Goods as g on bi.GoodsName=g.ID  inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID";
+            List<SqlParameter> sqlParameters = new List<SqlParameter>();
+            List<StockDetail> stockDetails = new List<StockDetail>();
+            DataTable table = DataAccessUtil.ExecuteDataTable(sql,sqlParameters);
             foreach (DataRow row in table.Rows)
             {
-                goodses.Add(new Goods()
+                StockDetail stock = new StockDetail();
+                stock.GoodsName = row["GoodsName"].ToString();
+                stock.GoodsFromName = row["GoodsFromName"].ToString();
+                stock.GoodsCategoryName = row["GoodsCategoryName"].ToString();
+                stock.StorehouseName = row["StorehouseName"].ToString();
+                stock.BillTypeId = Convert.ToBoolean(row["BillType_Id"]);
+                if (stock.BillTypeId)
                 {
-                    Id = Convert.ToInt32(row["Id"]),
-                    GoodsCode = row["GoodsCode"].ToString(),
-                    GoodsName = row["GoodsName"].ToString(),
-                });
-            }
-
-            lueGoodsName.Properties.DisplayMember = "GoodsName";
-            lueGoodsName.Properties.ValueMember = "Id";
-            lueGoodsName.Properties.DataSource = goodses;
-        }
-
-        private void InitLueStorehouseData()
-        {
-            string sql = "select * from " + Program.DataBaseName + "..MD_Storehouse where Actived=1";
-            List<SqlParameter> list = new List<SqlParameter>();
-            List<Storehouse> storehouses = new List<Storehouse>();
-            DataTable table = DataAccessUtil.ExecuteDataTable(sql, list);
-            foreach (DataRow row in table.Rows)
-            {
-                storehouses.Add(new Storehouse()
+                    stock.InCount = row["Count"].ToString();
+                }
+                else
                 {
-                    Id = Convert.ToInt32(row["Id"]),
-                    StorehouseCode = row["StorehouseCode"].ToString(),
-                    StorehouseName = row["StorehouseName"].ToString()
-                });
+                    stock.OutCount = row["Count"].ToString();
+                }
+                stockDetails.Add(stock);
             }
-
-            lueStorehouse.Properties.DisplayMember = "StorehouseName";
-            lueStorehouse.Properties.ValueMember = "Id";
-            lueStorehouse.Properties.DataSource = storehouses;
         }
 
         #endregion
-
-        private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -319,3 +319,4 @@ D:\C#Test\TAddWinform\sccjxc\TAddWinform\obj\Debug\TAddWinform.FormAddAndUpdateS
 D:\C#Test\TAddWinform\sccjxc\TAddWinform\obj\Debug\TAddWinform.FormStock.resources
 D:\C#Test\TAddWinform\sccjxc\TAddWinform\obj\Debug\TAddWinform.FormStorageDetail.resources
 D:\C#Test\TAddWinform\sccjxc\TAddWinform\obj\Debug\TAddWinform.FormOutLib.resources
+D:\C#Test\TAddWinform\sccjxc\TAddWinform\obj\Debug\TAddWinform.FormOutLibDetail.resources

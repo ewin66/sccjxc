@@ -22,10 +22,10 @@ namespace TAddWinform
         private void FormStorageDetail_Load(object sender, EventArgs e)
         {
             List<StorageDetail> storageDetails = new List<StorageDetail>();
-            string sql = "select b.MakeDate, g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,bi.Count,b.Maker,b.Remark from MD_BillItem as bi inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID inner join MD_Goods as g on bi.GoodsName=g.ID";
+            string sql = "select b.MakeDate, g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,bi.Count,b.Maker,b.Remark from MD_BillItem as bi inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID inner join MD_Goods as g on bi.GoodsName=g.ID" +
+                         " where b.billtype_id=1";
             List<SqlParameter> list = new List<SqlParameter>();
-            DataTable table = DataAccessUtil.ExecuteDataTable(sql, list);
-            foreach (DataRow row in table.Rows)
+            DataTable table = DataAccessUtil.ExecuteDataTable(sql, list);foreach (DataRow row in table.Rows)
             {
                 storageDetails.Add(new StorageDetail()
                 {

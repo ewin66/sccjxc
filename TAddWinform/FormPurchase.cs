@@ -308,7 +308,7 @@ namespace TAddWinform
             List<SqlParameter> list = new List<SqlParameter>()
             {
                 new SqlParameter("@sid", lueStorehouse.EditValue),
-                new SqlParameter("@bid", 1), //1入库,2出库
+                new SqlParameter("@bid", true), //1入库,0出库
                 new SqlParameter("@maker", txtMaker.Text.Trim()),
                 new SqlParameter("@md", deTime.Text.Trim()),
                 new SqlParameter("@cid", lueCompany.EditValue),

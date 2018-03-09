@@ -50,6 +50,16 @@ namespace TAddWinform
                 }
                 stockDetails.Add(stock);
             }
+            //遍历每个结果并合并
+            List<StockDetail> list = new List<StockDetail>();
+            for (var i = 0; i < stockDetails.Count; i++)
+            {
+                StockDetail stockDetail = stockDetails[i];
+                if (string.IsNullOrEmpty(stockDetail.InCount))
+                {
+                    
+                }
+            }
         }
 
         #endregion

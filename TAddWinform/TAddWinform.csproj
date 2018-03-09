@@ -269,6 +269,7 @@
     <Compile Include="LogHelper.cs" />
     <Compile Include="Model\Company.cs" />
     <Compile Include="Model\CompanyType.cs" />
+    <Compile Include="Model\StockDetail.cs" />
     <Compile Include="Model\StorageBill.cs" />
     <Compile Include="Model\StorageDetail.cs" />
     <Compile Include="Model\Storehouse.cs" />

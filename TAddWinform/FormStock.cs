@@ -88,8 +88,7 @@ namespace TAddWinform
                 }
             }
 
-            gridControl1.DataSource = lastShowDetails;
-        }
+            gridControl1.DataSource = lastShowDetails;}
 
         #endregion
     }

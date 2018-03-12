@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using DevExpress.XtraBars;
+using DevExpress.XtraGrid.Views.Grid;
 using TAddWinform.Model;
 
 namespace TAddWinform
@@ -14,7 +16,7 @@ namespace TAddWinform
             InitializeComponent();
             NullFillDataToGridView();
         }
-
+        private int _flag;
         //保存
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -24,11 +26,16 @@ namespace TAddWinform
         //重置
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            ResetViews();
         }
 
         //删除行
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (MessageBox.Show("确定要删除吗?", "提示!!!", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                gridView1.DeleteSelectedRows();
+            }
         }
 
         #region 填充空数据进行初始化
@@ -57,6 +64,45 @@ namespace TAddWinform
             LoadLueGoodsNameData();
             LoadGoodsCategoryData();
             LoadGoodsFromData();
+            if (Convert.ToInt32(Tag)>0)
+            {
+                //是从单据明细跳转而来
+                _flag = Convert.ToInt32(Tag);
+                //是从单据明细跳转而来
+                FillDataToViews(Convert.ToInt32(Tag));
+                gridView1.OptionsBehavior.Editable = false;
+                gridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.None;
+                btnSave.Visibility = BarItemVisibility.Never;
+                btnDeleteRow.Visibility = BarItemVisibility.Never;
+                btnReset.Visibility = BarItemVisibility.Never;
+                btnUp.Visibility = BarItemVisibility.Always;
+                btnNext.Visibility = BarItemVisibility.Always;
+                btnHomePage.Visibility = BarItemVisibility.Always;
+                btnShadowe.Visibility = BarItemVisibility.Always;
+                txtPurOddNumber.ReadOnly = true;
+                deTime.ReadOnly = true;
+                txtMaker.ReadOnly = true;
+                lueCompany.ReadOnly = true;
+                lueStorehouse.ReadOnly = true;
+            }
+            else
+            {
+                NullFillDataToGridView();
+                gridView1.OptionsBehavior.Editable = true;
+                gridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.Bottom;
+                btnSave.Visibility = BarItemVisibility.Always;
+                btnDeleteRow.Visibility = BarItemVisibility.Always;
+                btnReset.Visibility = BarItemVisibility.Always;
+                btnUp.Visibility = BarItemVisibility.Never;
+                btnNext.Visibility = BarItemVisibility.Never;
+                btnHomePage.Visibility = BarItemVisibility.Never;
+                btnShadowe.Visibility = BarItemVisibility.Never;
+                txtPurOddNumber.ReadOnly = false;
+                deTime.ReadOnly = false;
+                txtMaker.ReadOnly = false;
+                lueCompany.ReadOnly = false;
+                lueStorehouse.ReadOnly = false;
+            }
         }
 
         private void LoadGoodsFromData()
@@ -145,7 +191,7 @@ namespace TAddWinform
 
         private void LoadlueCompanyData()
         {
-            string sql = "select * from " + Program.DataBaseName + "..MD_Company where Actived=1 and CompanyType=0";
+            string sql = "select * from " + Program.DataBaseName + "..MD_Company where Actived=1 and CompanyType=1";
             List<SqlParameter> list = new List<SqlParameter>();
             List<Company> companies = new List<Company>();
             DataTable table = DataAccessUtil.ExecuteDataTable(sql, list);
@@ -354,5 +400,99 @@ namespace TAddWinform
         }
 
         #endregion
+        private void FillDataToViews(int id)
+        {
+            string sql =
+                "select g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,bi.*,b.* " +
+                "from MD_BillItem as bi inner join MD_Bill as b on bi.Bill_ID=b.id  " +
+                "inner join MD_Goods as g on bi.GoodsName=g.ID " +
+                "inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID " +
+                "inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID where b.BillType_ID=0 and b.id=" +
+                id;
+            List<SqlParameter> list = new List<SqlParameter>();
+            DataTable table = DataAccessUtil.ExecuteDataTable(sql, list);
+            if (table.Rows.Count <= 0)
+            {
+                MessageBox.Show("老哥,没有数据啦...", "提示!!!", MessageBoxButtons.OK);
+                return;
+            }
+
+            DataRow row = table.Rows[0];
+            txtPurOddNumber.Text = row["BillCode"].ToString();
+            deTime.Text = row["MakeDate"].ToString();
+            txtMaker.Text = row["Maker"].ToString();
+            lueCompany.EditValue = Convert.ToInt32(row["Company_ID"]);
+            lueStorehouse.EditValue = Convert.ToInt32(row["Storehouse_ID"]);
+            DataTable dt = new DataTable();
+            dt.Columns.Add("GoodsCode", typeof(string));
+            dt.Columns.Add("GoodsName", typeof(string));
+            dt.Columns.Add("GoodsFromName", typeof(string));
+            dt.Columns.Add("GoodsCategoryName", typeof(string));
+            dt.Columns.Add("UnitPrice", typeof(decimal));
+            dt.Columns.Add("Count", typeof(decimal));
+            dt.Columns.Add("Total", typeof(decimal));
+            gridControl1.DataSource = dt;
+            DataRow newRow = dt.NewRow();
+            dt.Rows.Add(newRow);
+            newRow["GoodsCode"] = row["GoodsCode"];
+            //            newRow["GoodsName"] = row["GoodsName"];
+            lueGoodsName.NullText = row["GoodsName"].ToString();
+            //            newRow["GoodsFromName"] = row["GoodsFromName"];
+            lueGoodsFromName.NullText = row["GoodsFromName"].ToString();
+            //            newRow["GoodsCategoryName"] = row["GoodsCategoryName"];
+            lueGoodsCategoryName.NullText = row["GoodsCategoryName"].ToString();
+            newRow["UnitPrice"] = row["UnitPrice"];
+            newRow["Count"] = row["Count"];
+            newRow["Total"] = row["Total"];
+        }
+
+        private void btnHomePage_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FillDataToViews(1);
+        }
+
+        private void btnUp_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string sql = "select isnull(max(id),0) from MD_Bill where id <" + _flag + " and BillType_ID=0";
+            List<SqlParameter> list = new List<SqlParameter>();
+            int tempId = Convert.ToInt32(DataAccessUtil.ExecuteScalar(sql, list));
+            if (tempId > 0)
+            {
+                FillDataToViews(tempId);
+                if (tempId != 0)
+                {
+                    _flag = tempId;
+                }
+            }
+            else
+            {
+                MessageBox.Show("当前已经是第一条单据了", "提示!!!", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        private void btnNext_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string sql = "select isnull(min(id),0) from MD_Bill where id >" + _flag + " and BillType_ID=0";
+            List<SqlParameter> list = new List<SqlParameter>();
+            object value = DataAccessUtil.ExecuteScalar(sql, list);
+            if (value != null)
+            {
+                int tempId = Convert.ToInt32(value);
+                FillDataToViews(tempId);
+                if (tempId != 0)
+                {
+                    _flag = tempId;
+                }
+            }
+        }
+
+        private void btnShadowe_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string sql = "select TOP 1 * from " + Program.DataBaseName + "..MD_BillItem" + " order by id desc";
+            List<SqlParameter> list = new List<SqlParameter>();
+            int id = Convert.ToInt32(DataAccessUtil.ExecuteScalar(sql, list));
+            FillDataToViews(id);
+        }
     }
 }

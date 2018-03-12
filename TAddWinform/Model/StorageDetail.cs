@@ -7,6 +7,7 @@ namespace TAddWinform.Model
 {
     public class StorageDetail
     {
+        public int Id { get; set; }
         public string MakeDate { get; set; }
         public string GoodsName { get; set; }
         public string GoodsFromName { get; set; }

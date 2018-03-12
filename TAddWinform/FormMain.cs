@@ -64,7 +64,7 @@ namespace TAddWinform
 
         }
 
-        private void ShowMdiForm(Type ucType)
+        public void ShowMdiForm(Type ucType)
         {
 
             FormMdiBase formTemp = null;
@@ -122,6 +122,7 @@ namespace TAddWinform
                 if (item.Caption == sender.Text)
                 {
                     smunWindows.ItemLinks.Remove(item);
+                    
                     break;
                 }
             }

@@ -28,38 +28,67 @@ namespace TAddWinform
 
         private void LoadStockDataList()
         {
-            string sql = "select g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,bi.Count,b.BillType_ID from MD_BillItem as bi inner join MD_Goods as g on bi.GoodsName=g.ID  inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID";
+            //所有的入库单
+            //select g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID,sum(bi.Count) as lastcount from MD_BillItem as bi inner join MD_Goods as g on bi.GoodsName=g.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID where b.BillType_ID=1 group by g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID
+
+            //所有的出库单
+            //select g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID,sum(bi.Count) as lastcount from MD_BillItem as bi inner join MD_Goods as g on bi.GoodsName=g.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID where b.BillType_ID=0 group by g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID
+
+
+            string sql = "select g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID,sum(bi.Count) as lastcount from MD_BillItem as bi inner join MD_Goods as g on bi.GoodsName=g.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID where b.BillType_ID=1 group by g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID";
             List<SqlParameter> sqlParameters = new List<SqlParameter>();
-            List<StockDetail> stockDetails = new List<StockDetail>();
+            List<StockDetail> stockDetailsIn = new List<StockDetail>();
             DataTable table = DataAccessUtil.ExecuteDataTable(sql,sqlParameters);
             foreach (DataRow row in table.Rows)
             {
                 StockDetail stock = new StockDetail();
-                stock.GoodsName = row["GoodsName"].ToString();
-                stock.GoodsFromName = row["GoodsFromName"].ToString();
-                stock.GoodsCategoryName = row["GoodsCategoryName"].ToString();
-                stock.StorehouseName = row["StorehouseName"].ToString();
-                stock.BillTypeId = Convert.ToBoolean(row["BillType_Id"]);
-                if (stock.BillTypeId)
-                {
-                    stock.InCount = row["Count"].ToString();
-                }
-                else
-                {
-                    stock.OutCount = row["Count"].ToString();
-                }
-                stockDetails.Add(stock);
+                stock.GoodsName = row["GoodsName"].ToString();//名称
+                stock.GoodsFromName = row["GoodsFromName"].ToString();//产地
+                stock.GoodsCategoryName = row["GoodsCategoryName"].ToString();//品种
+                stock.StorehouseName = row["StorehouseName"].ToString();//仓库名称
+                stock.LastCount = row["lastcount"].ToString();//每个商品的最终入库数量
+                stockDetailsIn.Add(stock); //所有入库结果
             }
-            //遍历每个结果并合并
-            List<StockDetail> list = new List<StockDetail>();
-            for (var i = 0; i < stockDetails.Count; i++)
+
+
+            string outSql = "select g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID,sum(bi.Count) as lastcount from MD_BillItem as bi inner join MD_Goods as g on bi.GoodsName=g.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID where b.BillType_ID=0 group by g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID";
+            List<StockDetail> stockDetailsOut = new List<StockDetail>();
+            DataTable tableOut = DataAccessUtil.ExecuteDataTable(outSql, sqlParameters);
+            foreach (DataRow row in tableOut.Rows) {
+                StockDetail stock = new StockDetail();
+                stock.GoodsName = row["GoodsName"].ToString();//名称
+                stock.GoodsFromName = row["GoodsFromName"].ToString();//产地
+                stock.GoodsCategoryName = row["GoodsCategoryName"].ToString();//品种
+                stock.StorehouseName = row["StorehouseName"].ToString();//仓库名称
+                stock.LastCount = row["lastcount"].ToString();//每个商品的最终入库数量
+                stockDetailsOut.Add(stock); //所有出库结果
+            }
+
+
+            List<StockDetail> lastShowDetails = new List<StockDetail>();
+            foreach (StockDetail detailIn in stockDetailsIn)
             {
-                StockDetail stockDetail = stockDetails[i];
-                if (string.IsNullOrEmpty(stockDetail.InCount))
+                foreach (StockDetail detailOut in stockDetailsOut)
                 {
-                    
+                    if (detailIn.GoodsName==detailOut.GoodsName&&detailIn.GoodsFromName==detailOut.GoodsFromName&&detailIn.GoodsCategoryName==detailOut.GoodsCategoryName)
+                    {
+                        StockDetail stock = new StockDetail();
+                        stock.GoodsName = detailIn.GoodsName;
+                        stock.GoodsFromName = detailIn.GoodsFromName;
+                        stock.GoodsCategoryName = detailIn.GoodsCategoryName;
+                        stock.StorehouseName = detailIn.StorehouseName;
+                        stock.LastCount = (Convert.ToDecimal(detailIn.LastCount) -
+                                           Convert.ToDecimal(detailOut.LastCount)).ToString();
+                        lastShowDetails.Add(stock);
+                    }
+                    else
+                    {
+                        lastShowDetails.Add(detailIn);
+                    }
                 }
             }
+
+            gridControl1.DataSource = lastShowDetails;
         }
 
         #endregion

@@ -31,6 +31,10 @@
             this.btnSave = new DevExpress.XtraBars.BarButtonItem();
             this.btnReset = new DevExpress.XtraBars.BarButtonItem();
             this.btnDeleteRow = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHomePage = new DevExpress.XtraBars.BarButtonItem();
+            this.btnUp = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNext = new DevExpress.XtraBars.BarButtonItem();
+            this.btnShadowe = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -109,9 +113,13 @@
             this.btnReset,
             this.barStaticItem1,
             this.btnAddRow,
-            this.btnDeleteRow});
+            this.btnDeleteRow,
+            this.btnUp,
+            this.btnNext,
+            this.btnHomePage,
+            this.btnShadowe});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 6;
+            this.barManager1.MaxItemId = 10;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar1
@@ -140,7 +148,11 @@
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSave),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnReset),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnDeleteRow)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDeleteRow),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnHomePage),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnUp),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnNext),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnShadowe)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -165,6 +177,34 @@
             this.btnDeleteRow.Id = 5;
             this.btnDeleteRow.Name = "btnDeleteRow";
             this.btnDeleteRow.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDeleteRow_ItemClick);
+            // 
+            // btnHomePage
+            // 
+            this.btnHomePage.Id = 8;
+            this.btnHomePage.ImageUri.Uri = "DoubleFirst";
+            this.btnHomePage.Name = "btnHomePage";
+            this.btnHomePage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHomePage_ItemClick);
+            // 
+            // btnUp
+            // 
+            this.btnUp.Id = 6;
+            this.btnUp.ImageUri.Uri = "First";
+            this.btnUp.Name = "btnUp";
+            this.btnUp.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUp_ItemClick);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Id = 7;
+            this.btnNext.ImageUri.Uri = "Last";
+            this.btnNext.Name = "btnNext";
+            this.btnNext.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNext_ItemClick);
+            // 
+            // btnShadowe
+            // 
+            this.btnShadowe.Id = 9;
+            this.btnShadowe.ImageUri.Uri = "DoubleLast";
+            this.btnShadowe.Name = "btnShadowe";
+            this.btnShadowe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShadowe_ItemClick);
             // 
             // bar3
             // 
@@ -654,6 +694,10 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.LookUpEdit lueCompany;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraBars.BarButtonItem btnUp;
+        private DevExpress.XtraBars.BarButtonItem btnNext;
+        private DevExpress.XtraBars.BarButtonItem btnHomePage;
+        private DevExpress.XtraBars.BarButtonItem btnShadowe;
 
 
     }

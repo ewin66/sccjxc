@@ -7,8 +7,10 @@ using System.Drawing;
 using System.Text;
 using System.Linq;
 using System.Windows.Forms;
+using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
 using TAddWinform.Model;
 
 namespace TAddWinform
@@ -21,15 +23,100 @@ namespace TAddWinform
             InitializeComponent();
         }
 
-        private int value;
+        private int _flag;
 
         //窗体加载
         private void FormPurchase_Load(object sender, EventArgs e)
         {
             //四个下拉框的初始化值
             LookUpEditInit();
-            //此处的表单为增加一条入库单据,显示为空的数据源即可
-            NullDataToGridView();
+            if (Convert.ToInt32(Tag) > 0)
+            {
+                _flag = Convert.ToInt32(Tag);
+                //是从单据明细跳转而来
+                FillDataToViews(Convert.ToInt32(Tag));
+                gridView1.OptionsBehavior.Editable = false;
+                gridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.None;
+                btnSave.Visibility = BarItemVisibility.Never;
+                btnAddRow.Visibility = BarItemVisibility.Never;
+                btnDeleteRow.Visibility = BarItemVisibility.Never;
+                btnReset.Visibility = BarItemVisibility.Never;
+                btnUp.Visibility = BarItemVisibility.Always;
+                btnNext.Visibility = BarItemVisibility.Always;
+                btnHomePage.Visibility = BarItemVisibility.Always;
+                btnShadowe.Visibility = BarItemVisibility.Always;
+                txtPurOddNumber.ReadOnly = true;
+                deTime.ReadOnly = true;
+                txtMaker.ReadOnly = true;
+                lueCompany.ReadOnly = true;
+                lueStorehouse.ReadOnly = true;
+            }
+            else
+            {
+                //此处的表单为增加一条入库单据,显示为空的数据源即可
+                NullDataToGridView();
+                gridView1.OptionsBehavior.Editable = true;
+                gridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.Bottom;
+                btnSave.Visibility = BarItemVisibility.Always;
+                btnAddRow.Visibility = BarItemVisibility.Always;
+                btnDeleteRow.Visibility = BarItemVisibility.Always;
+                btnReset.Visibility = BarItemVisibility.Always;
+                btnUp.Visibility = BarItemVisibility.Never;
+                btnNext.Visibility = BarItemVisibility.Never;
+                btnHomePage.Visibility = BarItemVisibility.Never;
+                btnShadowe.Visibility = BarItemVisibility.Never;
+                txtPurOddNumber.ReadOnly = false;
+                deTime.ReadOnly = false;
+                txtMaker.ReadOnly = false;
+                lueCompany.ReadOnly = false;
+                lueStorehouse.ReadOnly = false;
+            }
+        }
+
+        private void FillDataToViews(int id)
+        {
+            string sql =
+                "select g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,bi.*,b.* " +
+                "from MD_BillItem as bi inner join MD_Bill as b on bi.Bill_ID=b.id  " +
+                "inner join MD_Goods as g on bi.GoodsName=g.ID " +
+                "inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID " +
+                "inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID where b.BillType_ID=1 and b.id=" +
+                id;
+            List<SqlParameter> list = new List<SqlParameter>();
+            DataTable table = DataAccessUtil.ExecuteDataTable(sql, list);
+            if (table.Rows.Count <= 0)
+            {
+                MessageBox.Show("老哥,没有数据啦...", "提示!!!", MessageBoxButtons.OK);
+                return;
+            }
+
+            DataRow row = table.Rows[0];
+            txtPurOddNumber.Text = row["BillCode"].ToString();
+            deTime.Text = row["MakeDate"].ToString();
+            txtMaker.Text = row["Maker"].ToString();
+            lueCompany.EditValue = Convert.ToInt32(row["Company_ID"]);
+            lueStorehouse.EditValue = Convert.ToInt32(row["Storehouse_ID"]);
+            DataTable dt = new DataTable();
+            dt.Columns.Add("GoodsCode", typeof(string));
+            dt.Columns.Add("GoodsName", typeof(string));
+            dt.Columns.Add("GoodsFromName", typeof(string));
+            dt.Columns.Add("GoodsCategoryName", typeof(string));
+            dt.Columns.Add("UnitPrice", typeof(decimal));
+            dt.Columns.Add("Count", typeof(decimal));
+            dt.Columns.Add("Total", typeof(decimal));
+            gridControl1.DataSource = dt;
+            DataRow newRow = dt.NewRow();
+            dt.Rows.Add(newRow);
+            newRow["GoodsCode"] = row["GoodsCode"];
+//            newRow["GoodsName"] = row["GoodsName"];
+            lueGoodsName.NullText = row["GoodsName"].ToString();
+//            newRow["GoodsFromName"] = row["GoodsFromName"];
+            lueGoodsFromName.NullText = row["GoodsFromName"].ToString();
+//            newRow["GoodsCategoryName"] = row["GoodsCategoryName"];
+            lueGoodsCategoryName.NullText = row["GoodsCategoryName"].ToString();
+            newRow["UnitPrice"] = row["UnitPrice"];
+            newRow["Count"] = row["Count"];
+            newRow["Total"] = row["Total"];
         }
 
         //保存
@@ -47,7 +134,7 @@ namespace TAddWinform
         //删除行
         private void btnDeleteRow_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (MessageBox.Show("确定要删除吗?","提示!!!",MessageBoxButtons.OKCancel)==DialogResult.OK)
+            if (MessageBox.Show("确定要删除吗?", "提示!!!", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 gridView1.DeleteSelectedRows();
             }
@@ -68,7 +155,7 @@ namespace TAddWinform
 
         private void LoadCompanyData()
         {
-            string sql = "select * from " + Program.DataBaseName + "..MD_Company where Actived=1 and CompanyType=1";
+            string sql = "select * from " + Program.DataBaseName + "..MD_Company where Actived=1 and CompanyType=0";
             List<SqlParameter> list = new List<SqlParameter>();
             List<Company> companies = new List<Company>();
             DataTable table = DataAccessUtil.ExecuteDataTable(sql, list);
@@ -228,7 +315,7 @@ namespace TAddWinform
             //入库billitem
             if (gridView1.RowCount > 0)
             {
-                for (int i = 0; i <= gridView1.RowCount-1; i++)
+                for (int i = 0; i <= gridView1.RowCount - 2; i++)
                 {
                     DataRow row = gridView1.GetDataRow(i);
                     string goodsCode = row["GoodsCode"].ToString();
@@ -249,7 +336,8 @@ namespace TAddWinform
                             total);
                         //首先查询出bill表的最后一条Id
                         int billId = SelectLastIdFromBill();
-                        InsertDataToBillItem(billId, goodsCode, goodsName, goodsFromNameId, goodsCategoryNameId, unitPrice, count,total);
+                        InsertDataToBillItem(billId, goodsCode, goodsName, goodsFromNameId, goodsCategoryNameId,
+                            unitPrice, count, total);
                     }
                     catch (Exception e)
                     {
@@ -259,27 +347,54 @@ namespace TAddWinform
             }
         }
 
-        private void InsertDataToBillItem(int billId, string goodsCode, string goodsName, string goodsFromNameId, string goodsCategoryNameId, string unitPrice, string count, string total)
+        private void InsertDataToBillItem(int billId, string goodsCode, string goodsName, string goodsFromNameId,
+            string goodsCategoryNameId, string unitPrice, string count, string total)
         {
+            //如果此商品的ID在单据中存在的话就更新当前入库单据的Count即可
+            //if (SumGoodsCount(goodsName, count))
+            //{
+            //    MessageBox.Show("入库单保存成功...", "提示!!", MessageBoxButtons.OK);
+            //    ResetViews();
+            //    return;
+            //}
             string sql = "insert into " + Program.DataBaseName + "..MD_BillItem" +
                          "(Bill_ID,GoodsCode,GoodsName,GoodsFrom_ID,GoodsCategory_ID,UnitPrice,Count,Total)" +
                          " values(@billId,@goodsCode,@goodsName,@goodsFromNameId,@goodsCategoryNameId,@unitPrice" +
                          ",@count,@total)";
             List<SqlParameter> list = new List<SqlParameter>()
             {
-                new SqlParameter("@billId",billId),
-                new SqlParameter("@goodsCode",goodsCode),
-                new SqlParameter("@goodsName",goodsName),
-                new SqlParameter("@goodsFromNameId",goodsFromNameId),
-                new SqlParameter("@goodsCategoryNameId",goodsCategoryNameId),
-                new SqlParameter("@unitPrice",unitPrice),
-                new SqlParameter("@count",count),
-                new SqlParameter("@total",total)
+                new SqlParameter("@billId", billId),
+                new SqlParameter("@goodsCode", goodsCode),
+                new SqlParameter("@goodsName", goodsName),
+                new SqlParameter("@goodsFromNameId", goodsFromNameId),
+                new SqlParameter("@goodsCategoryNameId", goodsCategoryNameId),
+                new SqlParameter("@unitPrice", unitPrice),
+                new SqlParameter("@count", count),
+                new SqlParameter("@total", total)
             };
-            if (DataAccessUtil.ExecuteNonQuery(sql, list)>0)
+            if (DataAccessUtil.ExecuteNonQuery(sql, list) > 0)
             {
                 MessageBox.Show("入库单保存成功...", "提示!!", MessageBoxButtons.OK);
-                ResetViews();//重置数据
+                ResetViews(); //重置数据
+            }
+        }
+
+        private bool SumGoodsCount(string goodsName, string count)
+        {
+            string sql = "select isnull(sum(bi.count),0) from MD_BillItem  as bi  inner join MD_Bill as b on bi.Bill_ID=b.ID where bi.GoodsName="+goodsName+" and b.BillType_ID=1";
+            List<SqlParameter> list = new List<SqlParameter>();
+            int inCount = Convert.ToInt32(DataAccessUtil.ExecuteScalar(sql,list));
+            if (inCount>0)
+            {
+                int i = inCount + Convert.ToInt32(count);
+                sql = "update MD_BillItem set count=" + i + " where GoodsName=" + goodsName;
+                List<SqlParameter> s = new List<SqlParameter>();
+                DataAccessUtil.ExecuteNonQuery(sql, s);
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
@@ -380,5 +495,58 @@ namespace TAddWinform
         }
 
         #endregion
+
+        //首页数据
+        private void btnHomePage_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FillDataToViews(1);
+        }
+
+        //上一条数据
+        private void btnUp_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string sql = "select isnull(max(id),0) from MD_Bill where id <" + _flag + " and BillType_ID=1";
+            List<SqlParameter> list = new List<SqlParameter>();
+            int tempId = Convert.ToInt32(DataAccessUtil.ExecuteScalar(sql, list));
+            if (tempId > 0)
+            {
+                FillDataToViews(tempId);
+                if (tempId != 0)
+                {
+                    _flag = tempId;
+                }
+            }
+            else
+            {
+                MessageBox.Show("当前已经是第一条单据了", "提示!!!", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        //下一条数据
+        private void btnNext_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string sql = "select isnull(min(id),0) from MD_Bill where id >" + _flag + " and BillType_ID=1";
+            List<SqlParameter> list = new List<SqlParameter>();
+            object value = DataAccessUtil.ExecuteScalar(sql, list);
+            if (value != null)
+            {
+                int tempId = Convert.ToInt32(value);
+                FillDataToViews(tempId);
+                if (tempId!=0)
+                {
+                    _flag = tempId;
+                }
+            }
+        }
+
+        //尾页数据
+        private void btnShadowe_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string sql = "select TOP 1 * from " + Program.DataBaseName + "..MD_BillItem" + " order by id desc";
+            List<SqlParameter> list = new List<SqlParameter>();
+            int id = Convert.ToInt32(DataAccessUtil.ExecuteScalar(sql, list));
+            FillDataToViews(id);
+        }
     }
 }

@@ -14,5 +14,6 @@ namespace TAddWinform.Model
         public string InCount { get; set; }
         public string OutCount { get; set; }
         public bool BillTypeId { get; set; }
+        public string LastCount { get; set; }
     }
 }

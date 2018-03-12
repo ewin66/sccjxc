@@ -210,6 +210,14 @@ namespace TAddWinform {
         {
             int selectRow = gridView1.GetSelectedRows()[0];  //获得选中的第一行的下标
             int id = Convert.ToInt32(gridView1.GetRowCellValue(selectRow, gridView1.Columns["Id"])); //根据下标选择列值
+            //删除先看入库明细和出库明细是否有此商品的单据,如有先删除明细
+            string sqls = "select * from " + Program.DataBaseName + "..MD_BillItem where GoodsName=" + id;
+            List<SqlParameter> sqlParameters = new List<SqlParameter>();
+            if (DataAccessUtil.ExecuteDataTable(sqls,sqlParameters).Rows.Count>0)
+            {
+                MessageBox.Show("确定要删除吗?\r\n当前要删除的商品在单据中存在,请先删除单据..", "提示", MessageBoxButtons.OK);
+                return;
+            }
             string sql = "update " + Program.DataBaseName + "..MD_Goods set" +
                          " Actived=0 where id=" + id;
             List<SqlParameter> list = new List<SqlParameter>();

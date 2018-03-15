@@ -29,13 +29,13 @@ namespace TAddWinform
         private void LoadStockDataList()
         {
             //所有的入库单
-            //select g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID,sum(bi.Count) as lastcount from MD_BillItem as bi inner join MD_Goods as g on bi.GoodsName=g.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID where b.BillType_ID=1 group by g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID
+            //select g.ID as gid,gf.ID as gfid,gc.ID as gcid,g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID,sum(bi.Count) as lastcount from MD_BillItem as bi inner join MD_Goods as g on bi.GoodsName=g.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID where b.BillType_ID=1 group by g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID,g.ID,gf.ID,gc.ID
 
             //所有的出库单
-            //select g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID,sum(bi.Count) as lastcount from MD_BillItem as bi inner join MD_Goods as g on bi.GoodsName=g.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID where b.BillType_ID=0 group by g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID
+            //select g.ID as gid,gf.ID as gfid,gc.ID as gcid,g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID,sum(bi.Count) as lastcount from MD_BillItem as bi inner join MD_Goods as g on bi.GoodsName=g.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID where b.BillType_ID=0 group by g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID,g.ID,gf.ID,gc.ID
 
 
-            string sql = "select g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID,sum(bi.Count) as lastcount from MD_BillItem as bi inner join MD_Goods as g on bi.GoodsName=g.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID where b.BillType_ID=1 group by g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID";
+            string sql = "select g.ID as gid,gf.ID as gfid,gc.ID as gcid,b.Storehouse_ID,g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID,sum(bi.Count) as lastcount from MD_BillItem as bi inner join MD_Goods as g on bi.GoodsName=g.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID where b.BillType_ID=1 group by g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID,g.ID,gf.ID,gc.ID,b.Storehouse_ID";
             List<SqlParameter> sqlParameters = new List<SqlParameter>();
             List<StockDetail> stockDetailsIn = new List<StockDetail>();
             DataTable table = DataAccessUtil.ExecuteDataTable(sql,sqlParameters);
@@ -47,11 +47,15 @@ namespace TAddWinform
                 stock.GoodsCategoryName = row["GoodsCategoryName"].ToString();//品种
                 stock.StorehouseName = row["StorehouseName"].ToString();//仓库名称
                 stock.LastCount = row["lastcount"].ToString();//每个商品的最终入库数量
+                stock.GoodsId = Convert.ToInt32(row["gid"]);
+                stock.GoodsFromId = Convert.ToInt32(row["gfid"]);
+                stock.GoodsCategoryId = Convert.ToInt32(row["gcid"]);
+                stock.StorehouseId = Convert.ToInt32(row["Storehouse_ID"]);
                 stockDetailsIn.Add(stock); //所有入库结果
             }
 
 
-            string outSql = "select g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID,sum(bi.Count) as lastcount from MD_BillItem as bi inner join MD_Goods as g on bi.GoodsName=g.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID where b.BillType_ID=0 group by g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID";
+            string outSql = "select g.ID as gid,gf.ID as gfid,gc.ID as gcid,b.Storehouse_ID,g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID,sum(bi.Count) as lastcount from MD_BillItem as bi inner join MD_Goods as g on bi.GoodsName=g.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID where b.BillType_ID=0 group by g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID,g.ID,gf.ID,gc.ID,b.Storehouse_ID";
             List<StockDetail> stockDetailsOut = new List<StockDetail>();
             DataTable tableOut = DataAccessUtil.ExecuteDataTable(outSql, sqlParameters);
             foreach (DataRow row in tableOut.Rows) {
@@ -60,7 +64,11 @@ namespace TAddWinform
                 stock.GoodsFromName = row["GoodsFromName"].ToString();//产地
                 stock.GoodsCategoryName = row["GoodsCategoryName"].ToString();//品种
                 stock.StorehouseName = row["StorehouseName"].ToString();//仓库名称
-                stock.LastCount = row["lastcount"].ToString();//每个商品的最终入库数量
+                stock.LastCount = row["lastcount"].ToString();//每个商品的最终出库数量
+                stock.GoodsId = Convert.ToInt32(row["gid"]);
+                stock.GoodsFromId = Convert.ToInt32(row["gfid"]);
+                stock.GoodsCategoryId = Convert.ToInt32(row["gcid"]);
+                stock.StorehouseId = Convert.ToInt32(row["Storehouse_ID"]);
                 stockDetailsOut.Add(stock); //所有出库结果
             }
 
@@ -70,9 +78,13 @@ namespace TAddWinform
             {
                 foreach (StockDetail detailOut in stockDetailsOut)
                 {
-                    if (detailIn.GoodsName==detailOut.GoodsName&&detailIn.GoodsFromName==detailOut.GoodsFromName&&detailIn.GoodsCategoryName==detailOut.GoodsCategoryName)
+                    if (detailIn.GoodsId == detailOut.GoodsId && detailIn.GoodsFromId == detailOut.GoodsFromId && detailIn.GoodsCategoryId == detailOut.GoodsCategoryId)
                     {
                         StockDetail stock = new StockDetail();
+                        stock.GoodsId = detailIn.GoodsId;
+                        stock.GoodsFromId = detailIn.GoodsFromId;
+                        stock.GoodsCategoryId = detailIn.GoodsCategoryId;
+                        stock.StorehouseId = detailIn.StorehouseId;
                         stock.GoodsName = detailIn.GoodsName;
                         stock.GoodsFromName = detailIn.GoodsFromName;
                         stock.GoodsCategoryName = detailIn.GoodsCategoryName;
@@ -88,7 +100,29 @@ namespace TAddWinform
                 }
             }
 
-            gridControl1.DataSource = lastShowDetails;}
+            gridControl1.DataSource = lastShowDetails;
+            //将库存量录入数据库
+            foreach (StockDetail detail in lastShowDetails)
+            {
+                string insertSql = "insert into "+Program.DataBaseName+"..MD_Stock(Goods_ID,Storehouse_ID,Count,GoodsFrom_ID,GoodsCategory_ID) values(@goods_ID,@storehouse_ID,@coun,@goodsFrom_ID,@goodsCategory_ID)";
+                List<SqlParameter> list = new List<SqlParameter>()
+                {
+                    new SqlParameter("@goods_ID",detail.GoodsId),
+                    new SqlParameter("@storehouse_ID",detail.StorehouseId),
+                    new SqlParameter("@coun",Convert.ToDecimal(detail.LastCount)),
+                    new SqlParameter("@goodsFrom_ID",detail.GoodsFromId),
+                    new SqlParameter("@goodsCategory_ID",detail.GoodsCategoryId),
+                };
+                try
+                {
+                    DataAccessUtil.ExecuteNonQuery(insertSql, list);
+                }
+                catch (Exception e)
+                {
+                    ErrorHandler.OnError(e);
+                }
+            }
+        }
 
         #endregion
     }

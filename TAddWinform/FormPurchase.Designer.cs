@@ -35,6 +35,7 @@
             this.btnUp = new DevExpress.XtraBars.BarButtonItem();
             this.btnNext = new DevExpress.XtraBars.BarButtonItem();
             this.btnShadowe = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSaveUpdate = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -117,9 +118,10 @@
             this.btnUp,
             this.btnNext,
             this.btnHomePage,
-            this.btnShadowe});
+            this.btnShadowe,
+            this.btnSaveUpdate});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 10;
+            this.barManager1.MaxItemId = 11;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar1
@@ -152,7 +154,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnHomePage),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnUp),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnNext),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnShadowe)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnShadowe),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSaveUpdate)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -205,6 +208,13 @@
             this.btnShadowe.ImageUri.Uri = "DoubleLast";
             this.btnShadowe.Name = "btnShadowe";
             this.btnShadowe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShadowe_ItemClick);
+            // 
+            // btnSaveUpdate
+            // 
+            this.btnSaveUpdate.Caption = "保存修改";
+            this.btnSaveUpdate.Id = 10;
+            this.btnSaveUpdate.Name = "btnSaveUpdate";
+            this.btnSaveUpdate.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSaveUpdate_ItemClick);
             // 
             // bar3
             // 
@@ -286,6 +296,7 @@
             this.lueCompany.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyName1", "CompanyName1")});
             this.lueCompany.Properties.NullText = "请选择";
+            this.lueCompany.Properties.ReadOnly = true;
             this.lueCompany.Properties.ShowFooter = false;
             this.lueCompany.Properties.ShowHeader = false;
             this.lueCompany.Size = new System.Drawing.Size(152, 20);
@@ -308,6 +319,7 @@
             this.deTime.Properties.EditFormat.FormatString = "yyyy/MM/dd HH:mm:ss";
             this.deTime.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.deTime.Properties.Mask.EditMask = "yyyy/MM/dd HH:mm:ss";
+            this.deTime.Properties.ReadOnly = true;
             this.deTime.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
             this.deTime.Size = new System.Drawing.Size(190, 20);
             this.deTime.StyleController = this.layoutControl1;
@@ -334,6 +346,7 @@
             this.txtMaker.Location = new System.Drawing.Point(603, 17);
             this.txtMaker.MenuManager = this.barManager1;
             this.txtMaker.Name = "txtMaker";
+            this.txtMaker.Properties.ReadOnly = true;
             this.txtMaker.Size = new System.Drawing.Size(121, 20);
             this.txtMaker.StyleController = this.layoutControl1;
             this.txtMaker.TabIndex = 9;
@@ -354,6 +367,7 @@
             this.txtPurOddNumber.Location = new System.Drawing.Point(89, 17);
             this.txtPurOddNumber.MenuManager = this.barManager1;
             this.txtPurOddNumber.Name = "txtPurOddNumber";
+            this.txtPurOddNumber.Properties.ReadOnly = true;
             this.txtPurOddNumber.Size = new System.Drawing.Size(152, 20);
             this.txtPurOddNumber.StyleController = this.layoutControl1;
             this.txtPurOddNumber.TabIndex = 5;
@@ -698,6 +712,7 @@
         private DevExpress.XtraBars.BarButtonItem btnNext;
         private DevExpress.XtraBars.BarButtonItem btnHomePage;
         private DevExpress.XtraBars.BarButtonItem btnShadowe;
+        private DevExpress.XtraBars.BarButtonItem btnSaveUpdate;
 
 
     }

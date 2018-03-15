@@ -15,5 +15,10 @@ namespace TAddWinform.Model
         public string OutCount { get; set; }
         public bool BillTypeId { get; set; }
         public string LastCount { get; set; }
+        public int GoodsId { get; set; }
+        public int GoodsFromId { get; set; }
+        public int GoodsCategoryId { get; set; }
+        public int StorehouseId { get; set; }
+
     }
 }

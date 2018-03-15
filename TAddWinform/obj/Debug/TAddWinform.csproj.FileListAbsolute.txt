@@ -414,3 +414,4 @@ E:\netTest\我的进销存\sccjxc\TAddWinform\obj\Debug\TAddWinform.FormPwd.reso
 E:\netTest\我的进销存\sccjxc\TAddWinform\obj\Debug\TAddWinform.Properties.Resources.resources
 E:\netTest\我的进销存\sccjxc\TAddWinform\obj\Debug\TAddWinform.csproj.GenerateResource.Cache
 E:\netTest\我的进销存\sccjxc\TAddWinform\obj\Debug\TAddWinform.exe.licenses
+D:\C#Test\TAddWinform\sccjxc\TAddWinform\obj\Debug\TAddWinform.FormWhereStockIn.resources

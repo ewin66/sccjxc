@@ -25,13 +25,17 @@ namespace TAddWinform
         public event OpenInDetail OpenInDetailEvent;
 
 
-
         //加载
         private void FormStorageDetail_Load(object sender, EventArgs e)
         {
+            LoadAllDataToList();
+        }
+
+        private void LoadAllDataToList()
+        {
             List<StorageDetail> storageDetails = new List<StorageDetail>();
             string sql =
-                "select b.Id,b.MakeDate, g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,bi.Count,b.Maker,b.Remark from MD_BillItem as bi inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID inner join MD_Goods as g on bi.GoodsName=g.ID" +
+                "select b.Id,bi.ID as biid ,b.MakeDate, g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,bi.Count,b.Maker,b.Remark from MD_BillItem as bi inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID inner join MD_Goods as g on bi.GoodsName=g.ID" +
                 " where b.billtype_id=1 and g.Actived=1";
             List<SqlParameter> list = new List<SqlParameter>();
             DataTable table = DataAccessUtil.ExecuteDataTable(sql, list);
@@ -40,6 +44,7 @@ namespace TAddWinform
                 storageDetails.Add(new StorageDetail()
                 {
                     Id = Convert.ToInt32(row["Id"]),
+                    BiId = Convert.ToInt32(row["biid"]),
                     MakeDate = row["MakeDate"].ToString(),
                     GoodsName = row["GoodsName"].ToString(),
                     GoodsFromName = row["GoodsFromName"].ToString(),
@@ -64,8 +69,8 @@ namespace TAddWinform
             {
                 if (_hInfo.InRowCell)
                 {
-                    int id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("Id"));
-                    FormPurchase frm = new FormPurchase { Tag = id };
+                    int id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("BiId"));
+                    FormPurchase frm = new FormPurchase {Tag = id};
                     frm.Show();
                 }
             }
@@ -82,75 +87,52 @@ namespace TAddWinform
             _hInfo = gridView1.CalcHitInfo(e.Y, e.Y);
         }
 
+        //搜索
+        private void btnSearch_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadAllDataToList();
+        }
 
-        //private void ShowMdiForm(Type ucType)
-        //{
+        //条件搜索
+        private void btnWhereSearch_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormWhereStockIn frm = new FormWhereStockIn();
+            frm.SelectWhereStockInEvent += frm_SelectWhereStockInEvent;
+            frm.ShowDialog();
+        }
 
-        //    FormMdiBase formTemp = null;
-        //    //Serach Mdi Form
-        //    foreach (Form formMdiTemp in this.MdiChildren)
-        //    {
-        //        if (formMdiTemp.GetType().Name == ucType.Name)
-        //        {
-        //            formTemp = formMdiTemp as FormMdiBase;
-        //            break;
-        //        }
-        //    }
-        //    //Create Mdi Form From Assembly
-        //    if (formTemp == null)
-        //    {
-        //        try
-        //        {
-        //            formTemp = (FormMdiBase)System.Activator.CreateInstance(ucType, null, null);
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show(ex.ToString());
-        //        }
+        //删除
+        private void btnRemove_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //删除billItem的Id即可
+            //获得选中的行
+            int selectedhandle = gridView1.GetSelectedRows()[0];
+            //获得某列的值
+            int biId = Convert.ToInt32(gridView1.GetRowCellValue(selectedhandle, "BiId"));
+            //删除操作
+            string sql = "delete MD_BillItem where id=" + biId;
+            try
+            {
+                if (DataAccessUtil.ExecuteNonQuery(sql, new List<SqlParameter>()) > 0)
+                {
+                    LoadAllDataToList();
+                }
+            }
+            catch (Exception exception)
+            {
+                ErrorHandler.OnError(exception);
+            }
+        }
 
+        //修改
+        private void btnUpdate_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            MessageBox.Show("双击单元格进行修改..","来自于长者的提示",MessageBoxButtons.OK);
+        }
 
-        //        if (formTemp != null)
-        //        {
-        //            formTemp.LoadMdiForm += new MdiFormLoadEventHandler(LoadMdiFormHandler);
-        //            formTemp.UnloadMdiForm += new MdiFormUnLoadEventHandler(UnLoadMdiFormHandler);
-        //        }
-        //    }
-        //    if (formTemp == null)
-        //    {
-        //        MessageBox.Show("This function does not exist.");
-        //        return;
-        //    }
-        //    formTemp.MdiParent = this;
-        //    formTemp.BringToFront();
-        //    formTemp.Show();
-        //}
-
-        //private void LoadMdiFormHandler(FormMdiBase sender)
-        //{
-        //    DevExpress.XtraBars.BarButtonItem item = new DevExpress.XtraBars.BarButtonItem();
-        //    item.Caption = sender.Text;
-        //    item.Tag = sender.GetType();
-        //    item.ItemClick += MdiBarItemClick;
-        //    smunWindows.AddItem(item);
-        //}
-
-        //private void UnLoadMdiFormHandler(FormMdiBase sender)
-        //{
-        //    foreach (DevExpress.XtraBars.BarItemLink item in smunWindows.ItemLinks)
-        //    {
-        //        if (item.Caption == sender.Text)
-        //        {
-        //            smunWindows.ItemLinks.Remove(item);
-        //            break;
-        //        }
-        //    }
-        //}
-
-        //private void MdiBarItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    Type frmType = e.Item.Tag as Type;
-        //    if (frmType == null) return;
-        //    ShowMdiForm(frmType);
-        //}
+        public void frm_SelectWhereStockInEvent(List<StorageDetail> storageDetails)
+        {
+            gridControl1.DataSource = storageDetails;
+        }
     }
 }

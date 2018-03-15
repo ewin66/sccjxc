@@ -35,7 +35,7 @@ namespace TAddWinform
                 _flag = Convert.ToInt32(Tag);
                 //是从单据明细跳转而来
                 FillDataToViews(Convert.ToInt32(Tag));
-                gridView1.OptionsBehavior.Editable = false;
+                gridView1.OptionsBehavior.Editable = true;
                 gridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.None;
                 btnSave.Visibility = BarItemVisibility.Never;
                 btnAddRow.Visibility = BarItemVisibility.Never;
@@ -45,11 +45,12 @@ namespace TAddWinform
                 btnNext.Visibility = BarItemVisibility.Always;
                 btnHomePage.Visibility = BarItemVisibility.Always;
                 btnShadowe.Visibility = BarItemVisibility.Always;
-                txtPurOddNumber.ReadOnly = true;
-                deTime.ReadOnly = true;
-                txtMaker.ReadOnly = true;
-                lueCompany.ReadOnly = true;
-                lueStorehouse.ReadOnly = true;
+                btnSaveUpdate.Visibility = BarItemVisibility.Always;
+                txtPurOddNumber.ReadOnly = false;
+                deTime.ReadOnly = false;
+                txtMaker.ReadOnly = false;
+                lueCompany.ReadOnly = false;
+                lueStorehouse.ReadOnly = false;
             }
             else
             {
@@ -65,6 +66,7 @@ namespace TAddWinform
                 btnNext.Visibility = BarItemVisibility.Never;
                 btnHomePage.Visibility = BarItemVisibility.Never;
                 btnShadowe.Visibility = BarItemVisibility.Never;
+                btnSaveUpdate.Visibility = BarItemVisibility.Never;
                 txtPurOddNumber.ReadOnly = false;
                 deTime.ReadOnly = false;
                 txtMaker.ReadOnly = false;
@@ -75,48 +77,46 @@ namespace TAddWinform
 
         private void FillDataToViews(int id)
         {
-            string sql =
-                "select g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,bi.*,b.* " +
-                "from MD_BillItem as bi inner join MD_Bill as b on bi.Bill_ID=b.id  " +
-                "inner join MD_Goods as g on bi.GoodsName=g.ID " +
-                "inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID " +
-                "inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID where b.BillType_ID=1 and b.id=" +
-                id;
+            string sql = "select bi.*,b.* from MD_BillItem as bi inner join MD_Bill as b on bi.Bill_ID=b.id inner join MD_Goods as g on bi.GoodsName=g.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID where b.BillType_ID=1and bi.id=" +
+                         id;
             List<SqlParameter> list = new List<SqlParameter>();
-            DataTable table = DataAccessUtil.ExecuteDataTable(sql, list);
-            if (table.Rows.Count <= 0)
+            try
             {
-                MessageBox.Show("老哥,没有数据啦...", "提示!!!", MessageBoxButtons.OK);
-                return;
-            }
+                DataTable table = DataAccessUtil.ExecuteDataTable(sql, list);
+                if (table.Rows.Count <= 0) {
+                    MessageBox.Show("老哥,没有数据啦...", "提示!!!", MessageBoxButtons.OK);
+                    return;
+                }
 
-            DataRow row = table.Rows[0];
-            txtPurOddNumber.Text = row["BillCode"].ToString();
-            deTime.Text = row["MakeDate"].ToString();
-            txtMaker.Text = row["Maker"].ToString();
-            lueCompany.EditValue = Convert.ToInt32(row["Company_ID"]);
-            lueStorehouse.EditValue = Convert.ToInt32(row["Storehouse_ID"]);
-            DataTable dt = new DataTable();
-            dt.Columns.Add("GoodsCode", typeof(string));
-            dt.Columns.Add("GoodsName", typeof(string));
-            dt.Columns.Add("GoodsFromName", typeof(string));
-            dt.Columns.Add("GoodsCategoryName", typeof(string));
-            dt.Columns.Add("UnitPrice", typeof(decimal));
-            dt.Columns.Add("Count", typeof(decimal));
-            dt.Columns.Add("Total", typeof(decimal));
-            gridControl1.DataSource = dt;
-            DataRow newRow = dt.NewRow();
-            dt.Rows.Add(newRow);
-            newRow["GoodsCode"] = row["GoodsCode"];
-//            newRow["GoodsName"] = row["GoodsName"];
-            lueGoodsName.NullText = row["GoodsName"].ToString();
-//            newRow["GoodsFromName"] = row["GoodsFromName"];
-            lueGoodsFromName.NullText = row["GoodsFromName"].ToString();
-//            newRow["GoodsCategoryName"] = row["GoodsCategoryName"];
-            lueGoodsCategoryName.NullText = row["GoodsCategoryName"].ToString();
-            newRow["UnitPrice"] = row["UnitPrice"];
-            newRow["Count"] = row["Count"];
-            newRow["Total"] = row["Total"];
+                DataRow row = table.Rows[0];
+                txtPurOddNumber.Text = row["BillCode"].ToString();
+                deTime.Text = row["MakeDate"].ToString();
+                txtMaker.Text = row["Maker"].ToString();
+                lueCompany.EditValue = Convert.ToInt32(row["Company_ID"]);
+                lueStorehouse.EditValue = Convert.ToInt32(row["Storehouse_ID"]);
+                DataTable dt = new DataTable();
+                dt.Columns.Add("GoodsCode", typeof(string));
+                dt.Columns.Add("GoodsName", typeof(string));
+                dt.Columns.Add("GoodsFromName", typeof(string));
+                dt.Columns.Add("GoodsCategoryName", typeof(string));
+                dt.Columns.Add("UnitPrice", typeof(decimal));
+                dt.Columns.Add("Count", typeof(decimal));
+                dt.Columns.Add("Total", typeof(decimal));
+                gridControl1.DataSource = dt;
+                DataRow newRow = dt.NewRow();
+                dt.Rows.Add(newRow);
+                newRow["GoodsCode"] = row["GoodsCode"];
+                newRow["GoodsName"] = row["GoodsName"]; //这里给lookUpEdit赋值的时候是需要赋值ID的.....千万记住
+                newRow["GoodsFromName"] = row["GoodsFrom_ID"];
+                newRow["GoodsCategoryName"] = row["GoodsCategory_ID"];
+                newRow["UnitPrice"] = row["UnitPrice"];
+                newRow["Count"] = row["Count"];
+                newRow["Total"] = row["Total"];}
+            catch (Exception e)
+            {
+                ErrorHandler.OnError(e);
+            }
+           
         }
 
         //保存
@@ -381,10 +381,12 @@ namespace TAddWinform
 
         private bool SumGoodsCount(string goodsName, string count)
         {
-            string sql = "select isnull(sum(bi.count),0) from MD_BillItem  as bi  inner join MD_Bill as b on bi.Bill_ID=b.ID where bi.GoodsName="+goodsName+" and b.BillType_ID=1";
+            string sql =
+                "select isnull(sum(bi.count),0) from MD_BillItem  as bi  inner join MD_Bill as b on bi.Bill_ID=b.ID where bi.GoodsName=" +
+                goodsName + " and b.BillType_ID=1";
             List<SqlParameter> list = new List<SqlParameter>();
-            int inCount = Convert.ToInt32(DataAccessUtil.ExecuteScalar(sql,list));
-            if (inCount>0)
+            int inCount = Convert.ToInt32(DataAccessUtil.ExecuteScalar(sql, list));
+            if (inCount > 0)
             {
                 int i = inCount + Convert.ToInt32(count);
                 sql = "update MD_BillItem set count=" + i + " where GoodsName=" + goodsName;
@@ -533,7 +535,7 @@ namespace TAddWinform
             {
                 int tempId = Convert.ToInt32(value);
                 FillDataToViews(tempId);
-                if (tempId!=0)
+                if (tempId != 0)
                 {
                     _flag = tempId;
                 }
@@ -547,6 +549,11 @@ namespace TAddWinform
             List<SqlParameter> list = new List<SqlParameter>();
             int id = Convert.ToInt32(DataAccessUtil.ExecuteScalar(sql, list));
             FillDataToViews(id);
+        }
+
+        //保存修改
+        private void btnSaveUpdate_ItemClick(object sender, ItemClickEventArgs e)
+        {
         }
     }
 }

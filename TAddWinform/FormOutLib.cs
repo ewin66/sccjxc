@@ -16,7 +16,9 @@ namespace TAddWinform
             InitializeComponent();
             NullFillDataToGridView();
         }
+
         private int _flag;
+
         //保存
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -64,7 +66,7 @@ namespace TAddWinform
             LoadLueGoodsNameData();
             LoadGoodsCategoryData();
             LoadGoodsFromData();
-            if (Convert.ToInt32(Tag)>0)
+            if (Convert.ToInt32(Tag) > 0)
             {
                 //是从单据明细跳转而来
                 _flag = Convert.ToInt32(Tag);
@@ -223,16 +225,22 @@ namespace TAddWinform
                 string unitPrice = row["UnitPrice"].ToString();
                 string goodsName = row["GoodsName"].ToString();
                 string count = row["Count"].ToString();
-                if (!string.IsNullOrEmpty(goodsName) && !string.IsNullOrEmpty(count))
+                string goodFromName = row["GoodsFromName"].ToString();
+                string goodsCategoryName = row["GoodsCategoryName"].ToString();
+                if (!string.IsNullOrEmpty(goodsName) && !string.IsNullOrEmpty(count) &&
+                    !string.IsNullOrEmpty(goodFromName) && !string.IsNullOrEmpty(goodsCategoryName))
                 {
-                    string sql =
-                        "select g.GoodsName,bi.Count from MD_BillItem as bi inner join MD_Goods as g on bi.GoodsName=g.ID where bi.GoodsName=" +
-                        goodsName;
+//                    string sql =
+//                        "select g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID,sum(bi.Count) as lastcount from MD_BillItem as bi inner join MD_Goods as g on bi.GoodsName=g.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID inner join MD_Bill as b on bi.Bill_ID=b.ID inner join MD_Storehouse as s on b.Storehouse_ID=s.ID where b.BillType_ID=1 and bi.GoodsName=" + goodsName + " and bi.GoodsFrom_ID=" + goodFromName + " and bi.GoodsCategory_ID=" + goodsCategoryName + "group by g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,s.StorehouseName,b.BillType_ID";
+
+                    string sql = "select * from MD_Stock where Goods_ID=" + goodsName + " and GoodsFrom_ID=" +
+                                 goodFromName + " and GoodsCategory_ID=" + goodsCategoryName;
+
                     List<SqlParameter> list = new List<SqlParameter>();
                     DataRow row1 = DataAccessUtil.ExecuteDataTable(sql, list).Rows[0];
-                    if (Convert.ToDecimal(row1["Count"]) < Convert.ToDecimal(count))
+                    if (Convert.ToDecimal(row1["count"]) < Convert.ToDecimal(count))
                     {
-                        MessageBox.Show("当前库存中并没有这么多商品,只有" + Convert.ToDecimal(row1["Count"]) + "个!!", "提示",
+                        MessageBox.Show("当前库存中并没有这么多商品,只有" + Convert.ToDecimal(row1["count"]) + "个!!", "提示",
                             MessageBoxButtons.OK);
                         row["Count"] = 0;
                     }
@@ -240,10 +248,11 @@ namespace TAddWinform
 
                 if (!string.IsNullOrEmpty(unitPrice) && !string.IsNullOrEmpty(count))
                 {
-                    row["Total"] = Convert.ToDecimal(unitPrice) * Convert.ToDecimal(count);
+                    row["Total"] = Convert.ToDecimal(unitPrice) * Convert.ToDecimal(row["Count"].ToString());
                 }
             }
         }
+
         #endregion
 
 
@@ -254,7 +263,7 @@ namespace TAddWinform
             try
             {
                 //单据头值的合法性检查
-                CheckBillData(); 
+                CheckBillData();
                 //单据体值的合法性检查
                 CheckBodyData();
             }
@@ -291,9 +300,10 @@ namespace TAddWinform
             }
         }
 
-        private void DataInsertToDataBase(string goodsCode, string goodsName, string goodsFromNameId, string goodsCategoryNameId, string unitPrice, string count, string total)
+        private void DataInsertToDataBase(string goodsCode, string goodsName, string goodsFromNameId,
+            string goodsCategoryNameId, string unitPrice, string count, string total)
         {
-            string sql = "insert into "+Program.DataBaseName+"..MD_Bill" +
+            string sql = "insert into " + Program.DataBaseName + "..MD_Bill" +
                          "(Storehouse_ID,BillType_ID,Maker,MakeDate,Company_ID,BillCode)" +
                          " values(@sid,@bid,@maker,@md,@cid,@bc)";
             List<SqlParameter> sqlParameters = new List<SqlParameter>()
@@ -305,7 +315,7 @@ namespace TAddWinform
                 new SqlParameter("@cid", lueCompany.EditValue),
                 new SqlParameter("@bc", txtPurOddNumber.Text.Trim())
             };
-            if (DataAccessUtil.ExecuteNonQuery(sql, sqlParameters)>0)
+            if (DataAccessUtil.ExecuteNonQuery(sql, sqlParameters) > 0)
             {
                 //首先查询出bill表的最后一条Id
                 int billId = SelectLastIdFromBill();
@@ -316,18 +326,19 @@ namespace TAddWinform
                       ",@count,@total)";
                 List<SqlParameter> list = new List<SqlParameter>()
                 {
-                    new SqlParameter("@billId",billId),
-                    new SqlParameter("@goodsCode",goodsCode),
-                    new SqlParameter("@goodsName",goodsName),
-                    new SqlParameter("@goodsFromNameId",goodsFromNameId),
-                    new SqlParameter("@goodsCategoryNameId",goodsCategoryNameId),
-                    new SqlParameter("@unitPrice",unitPrice),
-                    new SqlParameter("@count",count),
-                    new SqlParameter("@total",total)
+                    new SqlParameter("@billId", billId),
+                    new SqlParameter("@goodsCode", goodsCode),
+                    new SqlParameter("@goodsName", goodsName),
+                    new SqlParameter("@goodsFromNameId", goodsFromNameId),
+                    new SqlParameter("@goodsCategoryNameId", goodsCategoryNameId),
+                    new SqlParameter("@unitPrice", unitPrice),
+                    new SqlParameter("@count", count),
+                    new SqlParameter("@total", total)
                 };
-                if (DataAccessUtil.ExecuteNonQuery(sql, list) > 0) {
+                if (DataAccessUtil.ExecuteNonQuery(sql, list) > 0)
+                {
                     MessageBox.Show("出库单保存成功...", "提示!!", MessageBoxButtons.OK);
-                    ResetViews();//重置数据
+                    ResetViews(); //重置数据
                 }
             }
         }
@@ -336,7 +347,7 @@ namespace TAddWinform
         {
             string sql = "select top 1 * from " + Program.DataBaseName + "..MD_Bill order by id desc";
             List<SqlParameter> list = new List<SqlParameter>();
-            return (int)DataAccessUtil.ExecuteScalar(sql, list);
+            return (int) DataAccessUtil.ExecuteScalar(sql, list);
         }
 
         private void ResetViews()
@@ -349,66 +360,93 @@ namespace TAddWinform
             NullFillDataToGridView();
         }
 
-        private void CheckDataIsValid(string goodsCode, string goodsName, string goodsFromNameId, string goodsCategoryNameId, string unitPrice, string count, string total)
+        private void CheckDataIsValid(string goodsCode, string goodsName, string goodsFromNameId,
+            string goodsCategoryNameId, string unitPrice, string count, string total)
         {
-            if (string.IsNullOrEmpty(goodsCode)) {
+            if (string.IsNullOrEmpty(goodsCode))
+            {
                 throw new ApplicationException("编码不能为空");
             }
 
-            if (string.IsNullOrEmpty(goodsName)) {
+            if (string.IsNullOrEmpty(goodsName))
+            {
                 throw new ApplicationException("名称不能为空");
             }
 
-            if (string.IsNullOrEmpty(goodsFromNameId)) {
+            if (string.IsNullOrEmpty(goodsFromNameId))
+            {
                 throw new ApplicationException("产地不能为空");
             }
 
-            if (string.IsNullOrEmpty(goodsCategoryNameId)) {
+            if (string.IsNullOrEmpty(goodsCategoryNameId))
+            {
                 throw new ApplicationException("种类不能为空");
             }
 
-            if (string.IsNullOrEmpty(unitPrice)) {
+            if (string.IsNullOrEmpty(unitPrice))
+            {
                 throw new ApplicationException("单价不能为空");
             }
 
-            if (string.IsNullOrEmpty(count)) {
+            if (string.IsNullOrEmpty(count))
+            {
                 throw new ApplicationException("数量不能为空");
             }
         }
 
         private void CheckBillData()
         {
-            if (string.IsNullOrEmpty(txtPurOddNumber.Text.Trim())) {
+            if (string.IsNullOrEmpty(txtPurOddNumber.Text.Trim()))
+            {
                 throw new ApplicationException("出库单号不能为空");
             }
 
-            if (string.IsNullOrEmpty(deTime.Text.Trim())) {
+            if (string.IsNullOrEmpty(deTime.Text.Trim()))
+            {
                 throw new ApplicationException("出库时间不能为空");
             }
 
-            if (string.IsNullOrEmpty(txtMaker.Text.Trim())) {
+            if (string.IsNullOrEmpty(txtMaker.Text.Trim()))
+            {
                 throw new ApplicationException("制单人不能为空");
             }
 
-            if (Convert.ToInt32(lueCompany.EditValue) <= 0) {
+            if (Convert.ToInt32(lueCompany.EditValue) <= 0)
+            {
                 throw new ApplicationException("没有选择关联单位");
             }
 
-            if (Convert.ToInt32(lueStorehouse.EditValue) <= 0) {
+            if (Convert.ToInt32(lueStorehouse.EditValue) <= 0)
+            {
                 throw new ApplicationException("没有选择仓库");
             }
         }
 
         #endregion
+
         private void FillDataToViews(int id)
         {
-            string sql =
-                "select g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,bi.*,b.* " +
-                "from MD_BillItem as bi inner join MD_Bill as b on bi.Bill_ID=b.id  " +
-                "inner join MD_Goods as g on bi.GoodsName=g.ID " +
-                "inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID " +
-                "inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID where b.BillType_ID=0 and b.id=" +
-                id;
+            string sql = string.Empty;
+            if (id == 1)
+            {
+                sql =
+                    "select top 1 g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,bi.*,b.* " +
+                    "from MD_BillItem as bi inner join MD_Bill as b on bi.Bill_ID=b.id  " +
+                    "inner join MD_Goods as g on bi.GoodsName=g.ID " +
+                    "inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID " +
+                    "inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID where b.BillType_ID=0";
+            }
+            else
+            {
+                sql =
+                    "select g.GoodsName,gf.GoodsFromName,gc.GoodsCategoryName,bi.*,b.* " +
+                    "from MD_BillItem as bi inner join MD_Bill as b on bi.Bill_ID=b.id  " +
+                    "inner join MD_Goods as g on bi.GoodsName=g.ID " +
+                    "inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID " +
+                    "inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID where b.BillType_ID=0 and bi.id=" +
+                    id;
+            }
+
             List<SqlParameter> list = new List<SqlParameter>();
             DataTable table = DataAccessUtil.ExecuteDataTable(sql, list);
             if (table.Rows.Count <= 0)

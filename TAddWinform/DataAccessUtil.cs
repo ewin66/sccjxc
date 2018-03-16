@@ -10,7 +10,7 @@ namespace TAddWinform
 {
     internal class DataAccessUtil
     {
-        private static readonly string Connstr = ConfigurationManager.ConnectionStrings["jxc"].ConnectionString;
+        public static readonly string Connstr = ConfigurationManager.ConnectionStrings["jxc"].ConnectionString;
         public static object ExecuteScalar(string sql, List<SqlParameter> paramList)
         {
             object o;

@@ -77,13 +77,15 @@ namespace TAddWinform
 
         private void FillDataToViews(int id)
         {
-            string sql = "select bi.*,b.* from MD_BillItem as bi inner join MD_Bill as b on bi.Bill_ID=b.id inner join MD_Goods as g on bi.GoodsName=g.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID where b.BillType_ID=1and bi.id=" +
-                         id;
+            string sql =
+                "select bi.*,b.* from MD_BillItem as bi inner join MD_Bill as b on bi.Bill_ID=b.id inner join MD_Goods as g on bi.GoodsName=g.ID inner join MD_GoodsFrom as gf on bi.GoodsFrom_ID=gf.ID inner join MD_GoodsCategory as gc on bi.GoodsCategory_ID=gc.ID where b.BillType_ID=1and bi.id=" +
+                id;
             List<SqlParameter> list = new List<SqlParameter>();
             try
             {
                 DataTable table = DataAccessUtil.ExecuteDataTable(sql, list);
-                if (table.Rows.Count <= 0) {
+                if (table.Rows.Count <= 0)
+                {
                     MessageBox.Show("老哥,没有数据啦...", "提示!!!", MessageBoxButtons.OK);
                     return;
                 }
@@ -111,12 +113,12 @@ namespace TAddWinform
                 newRow["GoodsCategoryName"] = row["GoodsCategory_ID"];
                 newRow["UnitPrice"] = row["UnitPrice"];
                 newRow["Count"] = row["Count"];
-                newRow["Total"] = row["Total"];}
+                newRow["Total"] = row["Total"];
+            }
             catch (Exception e)
             {
                 ErrorHandler.OnError(e);
             }
-           
         }
 
         //保存
@@ -554,6 +556,79 @@ namespace TAddWinform
         //保存修改
         private void btnSaveUpdate_ItemClick(object sender, ItemClickEventArgs e)
         {
+            try
+            {
+                //1,首先检查表头的view的值
+                CheckBillData();
+                //2,其次检查表单的view的值并且更新数据库
+                CheckFormData();
+            }
+            catch (Exception exception)
+            {
+                ErrorHandler.OnError(exception);
+            }
+        }
+
+        private void CheckFormData()
+        {
+            if (gridView1.RowCount <= 0) return;
+            for (int i = 0; i <= gridView1.RowCount - 1; i++)
+            {
+                DataRow row = gridView1.GetDataRow(i);
+                string goodsCode = row["GoodsCode"].ToString();
+                string goodsName = row["GoodsName"].ToString();
+                string goodsFromNameId = row["GoodsFromName"].ToString();
+                string goodsCategoryNameId = row["GoodsCategoryName"].ToString();
+                string unitPrice = row["UnitPrice"].ToString();
+                string count = row["Count"].ToString();
+                if (!string.IsNullOrEmpty(unitPrice) && !string.IsNullOrEmpty(count))
+                {
+                    row["Total"] = Convert.ToDecimal(unitPrice) * Convert.ToDecimal(count);
+                }
+
+                string total = row["Total"].ToString();
+                CheckDataIsValid(goodsCode, goodsName, goodsFromNameId, goodsCategoryNameId, unitPrice, count,
+                    total);
+                //3,进行更改数据库中的数据
+                var billItemId = Convert.ToInt32(Tag);
+                var billId = DataAccessUtil.ExecuteScalar("Select Bill_ID from MD_BillItem where ID="+billItemId,new List<SqlParameter>());
+
+                string sqlbi = "update bi set bi.GoodsCode=@code, bi.GoodsName=@gnid," +
+                             "bi.GoodsFrom_Id=@gfid, bi.GoodsCategory_ID=@gcid, " +
+                             "bi.UnitPrice=@up, bi.Count=@cou, bi.Total=@tol " +
+//                             "b.Storehouse_ID=@sid, b.BillType_ID=@bid, " +
+                    //                             "b.Maker=@maker, b.MakeDate=@md, b.Company_ID=@cid, b.BillCode=@bc " +
+                             "from MD_BillItem as bi inner join  MD_Bill as b" +
+                             " on bi.Bill_ID=b.ID where bi.id="+billItemId;
+                string sqlb = "update b set b.Storehouse_ID=@sid, b.BillType_ID=@bid, " +
+                              "b.Maker=@maker,b.MakeDate=@md,b.Company_ID=@cid,b.BillCode=@bc" +
+                              " from MD_Bill as b where b.id = " + billId;
+                List<SqlParameter> list = new List<SqlParameter>()
+                {
+                    new SqlParameter("@code", goodsCode),
+                    new SqlParameter("@gnid", goodsName),
+                    new SqlParameter("@gfid", goodsFromNameId),
+                    new SqlParameter("@gcid", goodsCategoryNameId),
+                    new SqlParameter("@up", unitPrice),
+                    new SqlParameter("@cou", count),
+                    new SqlParameter("@tol", total),
+                    
+                };
+                List<SqlParameter> listP = new List<SqlParameter>()
+                {
+                    new SqlParameter("@sid", lueStorehouse.EditValue),
+                    new SqlParameter("@bid", true), //1入库,0出库
+                    new SqlParameter("@maker", txtMaker.Text.Trim()),
+                    new SqlParameter("@md", deTime.Text.Trim()),
+                    new SqlParameter("@cid", lueCompany.EditValue),
+                    new SqlParameter("@bc", txtPurOddNumber.Text.Trim())
+                };
+                if (DataAccessUtil.ExecuteNonQuery(sqlbi, list) > 0 && DataAccessUtil.ExecuteNonQuery(sqlb, listP) > 0)
+                {
+                    MessageBox.Show("当前修改已经成功..", "提示!!!", MessageBoxButtons.OK);
+                    Close();
+                }
+            }
         }
     }
 }
